@@ -29,8 +29,7 @@ function showPage(name) {
   });
 
   // Close mobile menu
-  document.getElementById('navLinks').classList.remove('open');
-  document.getElementById('hamburger').classList.remove('open');
+  closeMenu();
 
   // Scroll to top
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -70,10 +69,14 @@ document.getElementById('hamburger').addEventListener('click', () => {
   isOpen ? closeMenu() : openMenu();
 });
 
-// Close menu on nav link click (covers both click and touch)
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', closeMenu);
-  a.addEventListener('touchend', closeMenu, { passive: true });
+// Mobile nav links — use touchend for instant response on mobile,
+// preventDefault stops the delayed ghost click from firing twice.
+document.querySelectorAll('.nav-mobile a[data-page]').forEach(a => {
+  a.addEventListener('touchend', e => {
+    e.preventDefault();           // cancel the ghost click ~300ms later
+    const page = a.dataset.page;
+    if (page) showPage(page);     // showPage() already calls closeMenu()
+  }, { passive: false });
 });
 
 // Backdrop click closes menu
