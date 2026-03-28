@@ -91,6 +91,18 @@ p { line-height: 1.8; }
 .hidden { display: none !important; }
 
 /* ===================================================
+   NAV BACKDROP (mobile)
+   =================================================== */
+#navBackdrop {
+  display: none;
+  position: fixed; inset: 0; z-index: 998;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(2px);
+  opacity: 0; transition: opacity 0.3s;
+}
+#navBackdrop.visible { display: block; opacity: 1; }
+
+/* ===================================================
    NAVIGATION
    =================================================== */
 #navbar {
@@ -904,11 +916,31 @@ p { line-height: 1.8; }
     display: none; flex-direction: column;
     position: fixed; inset: var(--nav-h) 0 0 0;
     background: rgba(17,17,17,0.98);
-    padding: 24px; gap: 4px; overflow-y: auto; z-index: 999;
+    padding: 16px 12px; gap: 4px;
+    overflow-y: auto; overflow-x: hidden;
+    z-index: 999;
+    -webkit-overflow-scrolling: touch;
   }
   .nav-links.open { display: flex; }
-  .nav-links a { padding: 14px 16px; font-size: 1rem; }
+  .nav-links li { width: 100%; }
+  .nav-links a {
+    display: block; width: 100%;
+    padding: 16px 20px; font-size: 1rem;
+    border-radius: var(--radius);
+    color: rgba(255,255,255,0.85);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .nav-links a:hover,
+  .nav-links a:active { color: var(--gold); background: rgba(201,168,76,0.1); }
+  .nav-links .nav-cta {
+    margin: 12px 0 0 0;
+    text-align: center;
+    background: var(--gold); color: var(--dark) !important;
+    padding: 16px 20px;
+  }
   .hamburger { display: flex; }
+  .hamburger span { pointer-events: none; }
 
   .hero-content { padding: 0 16px; }
   .hero { min-height: 90vh; }

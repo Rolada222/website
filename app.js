@@ -51,20 +51,34 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 // ─── Hamburger ────────────────────────────────────────
+function closeMenu() {
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('navLinks').classList.remove('open');
+  const backdrop = document.getElementById('navBackdrop');
+  if (backdrop) backdrop.classList.remove('visible');
+}
+
+function openMenu() {
+  document.getElementById('hamburger').classList.add('open');
+  document.getElementById('navLinks').classList.add('open');
+  const backdrop = document.getElementById('navBackdrop');
+  if (backdrop) backdrop.classList.add('visible');
+}
+
 document.getElementById('hamburger').addEventListener('click', () => {
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
-  hamburger.classList.toggle('open');
-  navLinks.classList.toggle('open');
+  const isOpen = document.getElementById('navLinks').classList.contains('open');
+  isOpen ? closeMenu() : openMenu();
 });
 
-// Close menu on nav link click
+// Close menu on nav link click (covers both click and touch)
 document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => {
-    document.getElementById('hamburger').classList.remove('open');
-    document.getElementById('navLinks').classList.remove('open');
-  });
+  a.addEventListener('click', closeMenu);
+  a.addEventListener('touchend', closeMenu, { passive: true });
 });
+
+// Backdrop click closes menu
+document.getElementById('navBackdrop').addEventListener('click', closeMenu);
+document.getElementById('navBackdrop').addEventListener('touchend', closeMenu, { passive: true });
 
 // ─── Scroll Reveal (Intersection Observer) ───────────
 const revealObserver = new IntersectionObserver((entries) => {
