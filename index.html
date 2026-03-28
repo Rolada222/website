@@ -41,16 +41,17 @@
   </div>
 </nav>
 <!-- Mobile nav OUTSIDE nav so backdrop-filter doesn't clip it -->
+<!-- NO onclick attributes here — handled entirely by JS to avoid double-fire -->
 <ul class="nav-links nav-mobile" id="navLinks">
-  <li><a href="#" onclick="showPage('home')" data-page="home">Home</a></li>
-  <li><a href="#" onclick="showPage('about')" data-page="about">About Us</a></li>
-  <li><a href="#" onclick="showPage('services')" data-page="services">Services</a></li>
-  <li><a href="#" onclick="showPage('projects')" data-page="projects">Projects</a></li>
-  <li><a href="#" onclick="showPage('beforeafter')" data-page="beforeafter">Before &amp; After</a></li>
-  <li><a href="#" onclick="showPage('testimonials')" data-page="testimonials">Testimonials</a></li>
-  <li><a href="#" onclick="showPage('faq')" data-page="faq">FAQ</a></li>
-  <li><a href="#" onclick="showPage('contact')" data-page="contact">Contact</a></li>
-  <li><a href="#" onclick="showPage('quote')" data-page="quote" class="nav-cta">Get a Quote</a></li>
+  <li><a href="#" data-page="home">Home</a></li>
+  <li><a href="#" data-page="about">About Us</a></li>
+  <li><a href="#" data-page="services">Services</a></li>
+  <li><a href="#" data-page="projects">Projects</a></li>
+  <li><a href="#" data-page="beforeafter">Before &amp; After</a></li>
+  <li><a href="#" data-page="testimonials">Testimonials</a></li>
+  <li><a href="#" data-page="faq">FAQ</a></li>
+  <li><a href="#" data-page="contact">Contact</a></li>
+  <li><a href="#" data-page="quote" class="nav-cta">Get a Quote</a></li>
 </ul>
 
 <!-- ===================== HOME PAGE ===================== -->

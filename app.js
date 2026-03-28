@@ -69,19 +69,37 @@ document.getElementById('hamburger').addEventListener('click', () => {
   isOpen ? closeMenu() : openMenu();
 });
 
-// Mobile nav links — use touchend for instant response on mobile,
-// preventDefault stops the delayed ghost click from firing twice.
-document.querySelectorAll('.nav-mobile a[data-page]').forEach(a => {
-  a.addEventListener('touchend', e => {
-    e.preventDefault();           // cancel the ghost click ~300ms later
-    const page = a.dataset.page;
-    if (page) showPage(page);     // showPage() already calls closeMenu()
-  }, { passive: false });
-});
+// Mobile nav links — single unified handler, no onclick attributes on elements.
+// Uses touchend for instant mobile response + click as fallback for non-touch.
+// stopPropagation prevents event reaching backdrop handler.
+(function attachMobileNavLinks() {
+  document.querySelectorAll('.nav-mobile a[data-page]').forEach(a => {
+    let tapped = false;
 
-// Backdrop click closes menu
+    a.addEventListener('touchend', e => {
+      e.preventDefault();       // stop ghost click
+      e.stopPropagation();      // stop backdrop handler firing
+      tapped = true;
+      const page = a.dataset.page;
+      if (page) showPage(page);
+      setTimeout(() => { tapped = false; }, 600);
+    }, { passive: false });
+
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      if (tapped) return;       // already handled by touchend
+      const page = a.dataset.page;
+      if (page) showPage(page);
+    });
+  });
+})();
+
+// Backdrop — closes menu when tapping outside
 document.getElementById('navBackdrop').addEventListener('click', closeMenu);
-document.getElementById('navBackdrop').addEventListener('touchend', closeMenu, { passive: true });
+document.getElementById('navBackdrop').addEventListener('touchend', e => {
+  e.preventDefault();
+  closeMenu();
+}, { passive: false });
 
 // ─── Scroll Reveal (Intersection Observer) ───────────
 const revealObserver = new IntersectionObserver((entries) => {
