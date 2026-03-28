@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Our completed residential construction projects in Dublin"/>
+  <title>Projects — COMPANY NAME</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head><body>
+
+<div id="navBackdrop"></div>
+<nav id="navbar"><div class="nav-container">
+  <a href="index.html" class="nav-logo"><div class="logo-mark">C</div><div class="logo-text"><span class="logo-name">COMPANY NAME</span><span class="logo-tagline">Residential Construction</span></div></a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links nav-desktop">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="beforeafter.html">Before &amp; After</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a href="quote.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</div></nav>
+<ul class="nav-links nav-mobile" id="navLinks">
+  <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="beforeafter.html">Before &amp; After</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a href="quote.html" class="nav-cta">Get a Quote</a></li>
+</ul>
+
+<main>
+
+  <section class="page-hero bg-dark">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-eyebrow">Our Work</span>
+        <h1 class="section-title">Completed Projects</h1>
+        <p class="section-subtitle">Browse a selection of our recently completed residential projects across Dublin and surrounding areas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container">
+
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" onclick="filterProjects(this,'all')">All</button>
+        <button class="filter-btn" onclick="filterProjects(this,'renovation')">Renovation</button>
+        <button class="filter-btn" onclick="filterProjects(this,'extension')">Extension</button>
+        <button class="filter-btn" onclick="filterProjects(this,'kitchen')">Kitchen</button>
+        <button class="filter-btn" onclick="filterProjects(this,'bathroom')">Bathroom</button>
+        <button class="filter-btn" onclick="filterProjects(this,'painting')">Painting</button>
+      </div>
+
+      <div class="projects-full-grid mt-lg">
+
+        <div class="pf-card reveal" data-cat="renovation">
+          <div class="pf-img pf-img--renovation">
+            <span class="pf-tag">Renovation</span>
+          </div>
+          <div class="pf-info">
+            <h3>Victorian Terrace Full Renovation</h3>
+            <p class="pf-meta">📍 Dublin 6 &nbsp;|&nbsp; ⏱ 14 weeks &nbsp;|&nbsp; 📅 March 2025</p>
+            <p>Complete gut renovation of a Victorian mid-terrace. New wiring, plumbing, insulation, plastering, kitchen, two bathrooms and full decoration throughout. Retained original period features including cornicing and fireplaces.</p>
+          </div>
+        </div>
+
+        <div class="pf-card reveal" data-cat="extension">
+          <div class="pf-img pf-img--extension">
+            <span class="pf-tag">Extension</span>
+          </div>
+          <div class="pf-info">
+            <h3>Rear Single-Storey Extension</h3>
+            <p class="pf-meta">📍 Sandymount, D4 &nbsp;|&nbsp; ⏱ 10 weeks &nbsp;|&nbsp; 📅 January 2025</p>
+            <p>40 sqm single-storey rear extension creating an open-plan kitchen-diner with lantern roof light and bi-fold doors opening to the rear garden. Structural steel installation and full fit-out included.</p>
+          </div>
+        </div>
+
+        <div class="pf-card reveal" data-cat="kitchen">
+          <div class="pf-img pf-img--kitchen">
+            <span class="pf-tag">Kitchen</span>
+          </div>
+          <div class="pf-info">
+            <h3>Luxury Kitchen Remodel</h3>
+            <p class="pf-meta">📍 Blackrock, Co. Dublin &nbsp;|&nbsp; ⏱ 5 weeks &nbsp;|&nbsp; 📅 December 2024</p>
+            <p>High-spec kitchen renovation featuring quartz island worktops, floor-to-ceiling cabinetry, integrated appliances, herringbone tile splashback, and underfloor heating beneath large-format porcelain tiles.</p>
+          </div>
+        </div>
+
+        <div class="pf-card reveal" data-cat="bathroom">
+          <div class="pf-img pf-img--bathroom">
+            <span class="pf-tag">Bathroom</span>
+          </div>
+          <div class="pf-info">
+            <h3>Master En-Suite Renovation</h3>
+            <p class="pf-meta">📍 Clontarf, Dublin 3 &nbsp;|&nbsp; ⏱ 3 weeks &nbsp;|&nbsp; 📅 November 2024</p>
+            <p>Full strip-out and redesign of master en-suite. Walk-in wet room with linear drain, bespoke double vanity unit, freestanding bath, heated mirror and underfloor heating. Completed in large-format Italian marble-effect tiles.</p>
+          </div>
+        </div>
+
+        <div class="pf-card reveal" data-cat="extension">
+          <div class="pf-img pf-img--attic">
+            <span class="pf-tag">Attic Conversion</span>
+          </div>
+          <div class="pf-info">
+            <h3>Attic Conversion to Master Bedroom</h3>
+            <p class="pf-meta">📍 Rathgar, Dublin 6 &nbsp;|&nbsp; ⏱ 7 weeks &nbsp;|&nbsp; 📅 October 2024</p>
+            <p>Conversion of unused attic space into a large master bedroom suite with dormer window, en-suite shower room, eaves storage and bespoke staircase. Full insulation, plastering, and decoration included.</p>
+          </div>
+        </div>
+
+        <div class="pf-card reveal" data-cat="renovation">
+          <div class="pf-img pf-img--presale">
+            <span class="pf-tag">Renovation</span>
+          </div>
+          <div class="pf-info">
+            <h3>Pre-Sale Refurbishment</h3>
+            <p class="pf-meta">📍 Ranelagh, Dublin 6 &nbsp;|&nbsp; ⏱ 6 weeks &nbsp;|&nbsp; 📅 September 2024</p>
+            <p>Full pre-sale refresh of a 4-bed semi-detached property. New kitchen, replastered hallway, full interior repaint, bathroom retile, new flooring throughout and external repaint. Sold above asking price within 2 weeks.</p>
+          </div>
+        </div>
+
+        <div class="pf-card reveal" data-cat="painting">
+          <div class="pf-img pf-img--painting">
+            <span class="pf-tag">Painting</span>
+          </div>
+          <div class="pf-info">
+            <h3>Full Exterior Repaint</h3>
+            <p class="pf-meta">📍 Terenure, Dublin 6W &nbsp;|&nbsp; ⏱ 2 weeks &nbsp;|&nbsp; 📅 August 2024</p>
+            <p>Complete exterior repaint of a large detached property. Render crack repairs and repointing, full masonry preparation, two coats of premium Sandtex masonry paint, plus gloss finish to all windows, doors, soffits and fascias.</p>
+          </div>
+        </div>
+
+        <div class="pf-card reveal" data-cat="renovation">
+          <div class="pf-img pf-img--newbuild">
+            <span class="pf-tag">New Build Fit-Out</span>
+          </div>
+          <div class="pf-info">
+            <h3>New Build Interior Fit-Out</h3>
+            <p class="pf-meta">📍 Dalkey, Co. Dublin &nbsp;|&nbsp; ⏱ 12 weeks &nbsp;|&nbsp; 📅 July 2024</p>
+            <p>Complete interior fit-out of a new-build detached home. Tiling throughout, kitchen and utility installation, bathroom fit-outs to all 4 bathrooms, flooring, joinery, painting and final decoration before handover.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-banner bg-dark">
+    <div class="container text-center">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Start Your Project</span>
+        <h2 class="section-title">Your Home Could Be Next</h2>
+        <p class="section-subtitle">Join our growing list of happy homeowners. Get a free, detailed quote for your project today.</p>
+        <a href="quote.html" class="btn btn-gold mt-lg">Get a Free Quote</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer"><div class="footer-top"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-logo"><div class="logo-mark">C</div><div class="logo-text"><span class="logo-name">COMPANY NAME</span><span class="logo-tagline">Residential Construction</span></div></div><p>Family-run residential construction specialists serving Dublin since 2009.</p><div class="footer-trust-badges"><span>🛡️ Fully Insured</span><span>✅ RECI Registered</span><span>✅ RGII Certified</span></div></div><div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="beforeafter.html">Before &amp; After</a></li></ul></div><div class="footer-links-col"><h4>More</h4><ul><li><a href="testimonials.html">Testimonials</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a href="quote.html">Get a Quote</a></li></ul></div><div class="footer-contact-col"><h4>Contact</h4><div class="footer-contact-item"><a href="tel:+353XXXXXXXXX">📞 +353 XX XXX XXXX</a></div><div class="footer-contact-item"><a href="mailto:info@companyname.ie">✉️ info@companyname.ie</a></div><div class="footer-contact-item">📍 123 Business Street, Dublin</div><div class="footer-social"><a href="#" class="fsocial">f</a><a href="#" class="fsocial">in</a><a href="#" class="fsocial">ig</a></div></div></div></div></div><div class="footer-bottom"><div class="container"><p>&copy; 2025 COMPANY NAME. All rights reserved.</p></div></div></footer>
+
+<div id="chatbot"><button id="chatToggle" onclick="toggleChat()" aria-label="Open chat"><span id="chatOpenIcon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span id="chatCloseIcon" class="hidden"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span id="chatUnread" class="chat-unread hidden">1</span></button><div id="chatWindow" class="chat-window hidden"><div class="chat-header"><div class="chat-header-avatar">C</div><div class="chat-header-info"><strong>COMPANY NAME</strong><span><span class="chat-online-dot"></span> Online</span></div><button class="chat-close-btn" onclick="toggleChat()">✕</button></div><div class="chat-messages" id="chatMessages"></div><div class="chat-quick-replies" id="quickReplies"></div><div class="chat-input-row"><input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off" onkeydown="if(event.key==='Enter') sendUserMessage()"/><button onclick="sendUserMessage()" class="chat-send-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button></div></div></div>
+<div id="toast" class="toast hidden"></div>
+<script src="app.js"></script><script src="chatbot.js"></script>
+
+</body></html>

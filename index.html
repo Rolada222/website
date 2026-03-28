@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional residential construction and renovation services. Home renovations, extensions, bathroom and kitchen remodelling, painting, plumbing and electrical works." />
-  <title>COMPANY NAME — Premium Residential Construction</title>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional residential construction and renovation services in Dublin. Home renovations, extensions, bathroom, kitchen, painting, plumbing and electrical works." />
+  <title>COMPANY NAME — Premium Residential Construction Dublin</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -12,1764 +11,310 @@
 </head>
 <body>
 
-<!-- ===================== NAVIGATION ===================== -->
 <div id="navBackdrop"></div>
 <nav id="navbar">
   <div class="nav-container">
-    <a href="#" class="nav-logo" onclick="showPage('home')">
+    <a href="index.html" class="nav-logo">
       <div class="logo-mark">C</div>
-      <div class="logo-text">
-        <span class="logo-name">COMPANY NAME</span>
-        <span class="logo-tagline">Residential Construction</span>
-      </div>
+      <div class="logo-text"><span class="logo-name">COMPANY NAME</span><span class="logo-tagline">Residential Construction</span></div>
     </a>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-    <!-- Desktop nav links stay here, shown via CSS on large screens -->
-    <ul class="nav-links nav-desktop" id="navLinksDesktop">
-      <li><a href="#" onclick="showPage('home')" data-page="home">Home</a></li>
-      <li><a href="#" onclick="showPage('about')" data-page="about">About Us</a></li>
-      <li><a href="#" onclick="showPage('services')" data-page="services">Services</a></li>
-      <li><a href="#" onclick="showPage('projects')" data-page="projects">Projects</a></li>
-      <li><a href="#" onclick="showPage('beforeafter')" data-page="beforeafter">Before &amp; After</a></li>
-      <li><a href="#" onclick="showPage('testimonials')" data-page="testimonials">Testimonials</a></li>
-      <li><a href="#" onclick="showPage('faq')" data-page="faq">FAQ</a></li>
-      <li><a href="#" onclick="showPage('contact')" data-page="contact">Contact</a></li>
-      <li><a href="#" onclick="showPage('quote')" data-page="quote" class="nav-cta">Get a Quote</a></li>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links nav-desktop">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="beforeafter.html">Before &amp; After</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="quote.html" class="nav-cta">Get a Quote</a></li>
     </ul>
   </div>
 </nav>
-<!-- Mobile nav OUTSIDE nav so backdrop-filter doesn't clip it -->
-<!-- NO onclick attributes here — handled entirely by JS to avoid double-fire -->
 <ul class="nav-links nav-mobile" id="navLinks">
-  <li><a href="#" data-page="home">Home</a></li>
-  <li><a href="#" data-page="about">About Us</a></li>
-  <li><a href="#" data-page="services">Services</a></li>
-  <li><a href="#" data-page="projects">Projects</a></li>
-  <li><a href="#" data-page="beforeafter">Before &amp; After</a></li>
-  <li><a href="#" data-page="testimonials">Testimonials</a></li>
-  <li><a href="#" data-page="faq">FAQ</a></li>
-  <li><a href="#" data-page="contact">Contact</a></li>
-  <li><a href="#" data-page="quote" class="nav-cta">Get a Quote</a></li>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about.html">About Us</a></li>
+  <li><a href="services.html">Services</a></li>
+  <li><a href="projects.html">Projects</a></li>
+  <li><a href="beforeafter.html">Before &amp; After</a></li>
+  <li><a href="testimonials.html">Testimonials</a></li>
+  <li><a href="faq.html">FAQ</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="quote.html" class="nav-cta">Get a Quote</a></li>
 </ul>
 
-<!-- ===================== HOME PAGE ===================== -->
-<div id="page-home" class="page active">
+<main>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow reveal">Trusted Residential Specialists</p>
-      <h1 class="hero-title reveal">Professional Construction<br />&amp; Renovation Services</h1>
-      <p class="hero-subtitle reveal">From full home renovations to kitchen, bathroom, and extension projects — we deliver high-quality workmanship with reliable service and transparent quotations.</p>
-      <div class="hero-actions reveal">
-        <button class="btn btn-gold" onclick="showPage('quote')">Get a Free Quote</button>
-        <button class="btn btn-outline" onclick="showPage('projects')">View Our Work</button>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow reveal">Trusted Residential Specialists</p>
+    <h1 class="hero-title reveal">Professional Construction<br />&amp; Renovation Services</h1>
+    <p class="hero-subtitle reveal">From full home renovations to kitchen, bathroom, and extension projects — we deliver high-quality workmanship with reliable service and transparent quotations.</p>
+    <div class="hero-actions reveal">
+      <a href="quote.html" class="btn btn-gold">Get a Free Quote</a>
+      <a href="projects.html" class="btn btn-outline">View Our Work</a>
+    </div>
+    <div class="hero-trust reveal">
+      <div class="trust-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> 15+ Years Experience</div>
+      <div class="trust-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Fully Insured</div>
+      <div class="trust-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg> 500+ Projects Done</div>
+      <div class="trust-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg> Free Quotations</div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<!-- Company Intro -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text reveal">
+        <p class="section-eyebrow">Who We Are</p>
+        <h2 class="section-title">Building Better Homes<br />Since <em>2009</em></h2>
+        <p class="body-text">We are a family-run residential construction company with over 15 years of experience delivering exceptional results across a wide range of home improvement projects.</p>
+        <p class="body-text">From planning and design to final finishes, we manage your project with professionalism, clear communication, and genuine care for your home.</p>
+        <a href="about.html" class="btn btn-dark mt-lg">Learn More About Us</a>
       </div>
-      <div class="hero-trust reveal">
-        <div class="trust-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> 15+ Years Experience</div>
-        <div class="trust-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Fully Insured</div>
-        <div class="trust-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg> 500+ Projects Done</div>
-        <div class="trust-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg> Free Quotations</div>
+      <div class="intro-stats reveal">
+        <div class="stat-card"><span class="stat-number">15+</span><span class="stat-label">Years in Business</span></div>
+        <div class="stat-card"><span class="stat-number">500+</span><span class="stat-label">Projects Completed</span></div>
+        <div class="stat-card"><span class="stat-number">98%</span><span class="stat-label">Client Satisfaction</span></div>
+        <div class="stat-card"><span class="stat-number">50+</span><span class="stat-label">Expert Tradespeople</span></div>
       </div>
     </div>
-    <div class="hero-scroll-hint">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Company Intro -->
-  <section class="section bg-white">
-    <div class="container">
-      <div class="intro-grid">
-        <div class="intro-text reveal">
-          <p class="section-eyebrow">Who We Are</p>
-          <h2 class="section-title">Building Better Homes<br />Since <em>2009</em></h2>
-          <p class="body-text">We are a family-run residential construction company with over 15 years of experience delivering exceptional results across a wide range of home improvement projects. Our team of skilled tradespeople takes pride in every job, large or small.</p>
-          <p class="body-text">From planning and design to final finishes, we manage your project with professionalism, clear communication, and genuine care for your home.</p>
-          <button class="btn btn-dark mt-lg" onclick="showPage('about')">Learn More About Us</button>
-        </div>
-        <div class="intro-stats reveal">
-          <div class="stat-card">
-            <span class="stat-number">15+</span>
-            <span class="stat-label">Years in Business</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">500+</span>
-            <span class="stat-label">Projects Completed</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">98%</span>
-            <span class="stat-label">Client Satisfaction</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">50+</span>
-            <span class="stat-label">Expert Tradespeople</span>
-          </div>
-        </div>
-      </div>
+<!-- Services Preview -->
+<section class="section bg-warm">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">What We Do</p>
+      <h2 class="section-title">Our Core Services</h2>
+      <p class="section-subtitle">Comprehensive residential construction and renovation services tailored to your needs and budget.</p>
     </div>
-  </section>
-
-  <!-- Services Preview -->
-  <section class="section bg-warm">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow">What We Do</p>
-        <h2 class="section-title">Our Core Services</h2>
-        <p class="section-subtitle">Comprehensive residential construction and renovation services tailored to your needs and budget.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card reveal" onclick="showPage('services')">
-          <div class="service-icon">🏗️</div>
-          <h3>Residential Construction</h3>
-          <p>New builds and full-scale construction projects delivered to the highest standard.</p>
-          <span class="card-link">Learn More →</span>
-        </div>
-        <div class="service-card reveal" onclick="showPage('services')">
-          <div class="service-icon">🔨</div>
-          <h3>Home Renovation</h3>
-          <p>Complete home transformations that breathe new life into your existing property.</p>
-          <span class="card-link">Learn More →</span>
-        </div>
-        <div class="service-card reveal" onclick="showPage('services')">
-          <div class="service-icon">🏠</div>
-          <h3>House Extensions</h3>
-          <p>Expand your living space with expertly designed and built home extensions.</p>
-          <span class="card-link">Learn More →</span>
-        </div>
-        <div class="service-card reveal" onclick="showPage('services')">
-          <div class="service-icon">🛁</div>
-          <h3>Bathroom Renovation</h3>
-          <p>Luxury bathroom redesigns from concept through to stunning completion.</p>
-          <span class="card-link">Learn More →</span>
-        </div>
-        <div class="service-card reveal" onclick="showPage('services')">
-          <div class="service-icon">🍳</div>
-          <h3>Kitchen Renovation</h3>
-          <p>Beautiful, functional kitchen transformations that add real value to your home.</p>
-          <span class="card-link">Learn More →</span>
-        </div>
-        <div class="service-card reveal" onclick="showPage('services')">
-          <div class="service-icon">🪣</div>
-          <h3>Painting &amp; Decorating</h3>
-          <p>Expert interior and exterior painting with premium finishes and materials.</p>
-          <span class="card-link">Learn More →</span>
-        </div>
-      </div>
-      <div class="text-center mt-xl reveal">
-        <button class="btn btn-gold" onclick="showPage('services')">View All Services</button>
-      </div>
+    <div class="services-grid">
+      <a href="services.html" class="service-card reveal">
+        <div class="service-icon">🏗️</div>
+        <h3>Residential Construction</h3>
+        <p>New builds and full-scale construction projects delivered to the highest standard.</p>
+        <span class="card-link">Learn More →</span>
+      </a>
+      <a href="services.html" class="service-card reveal">
+        <div class="service-icon">🔨</div>
+        <h3>Home Renovation</h3>
+        <p>Complete home transformations that breathe new life into your existing property.</p>
+        <span class="card-link">Learn More →</span>
+      </a>
+      <a href="services.html" class="service-card reveal">
+        <div class="service-icon">🏠</div>
+        <h3>House Extensions</h3>
+        <p>Expand your living space with expertly designed and built home extensions.</p>
+        <span class="card-link">Learn More →</span>
+      </a>
+      <a href="services.html" class="service-card reveal">
+        <div class="service-icon">🛁</div>
+        <h3>Bathroom Renovation</h3>
+        <p>Luxury bathroom redesigns from concept through to stunning completion.</p>
+        <span class="card-link">Learn More →</span>
+      </a>
+      <a href="services.html" class="service-card reveal">
+        <div class="service-icon">🍳</div>
+        <h3>Kitchen Renovation</h3>
+        <p>Beautiful, functional kitchen transformations that add real value to your home.</p>
+        <span class="card-link">Learn More →</span>
+      </a>
+      <a href="services.html" class="service-card reveal">
+        <div class="service-icon">🪣</div>
+        <h3>Painting &amp; Decorating</h3>
+        <p>Expert interior and exterior painting with premium finishes and materials.</p>
+        <span class="card-link">Learn More →</span>
+      </a>
     </div>
-  </section>
+    <div class="text-center mt-xl reveal">
+      <a href="services.html" class="btn btn-gold">View All Services</a>
+    </div>
+  </div>
+</section>
 
-  <!-- Why Choose Us Strip -->
-  <section class="section bg-dark">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow light">Why Choose Us</p>
-        <h2 class="section-title light">The COMPANY NAME Difference</h2>
+<!-- Why Choose Us -->
+<section class="section bg-dark">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-eyebrow light">Why Choose Us</p>
+      <h2 class="section-title light">The COMPANY NAME Difference</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar reveal"><div class="pillar-icon">🛡️</div><h3>Fully Insured</h3><p>Complete public liability and employer's insurance for your peace of mind on every project.</p></div>
+      <div class="pillar reveal"><div class="pillar-icon">📋</div><h3>Transparent Pricing</h3><p>Detailed written quotations with no hidden costs. What we quote is what you pay.</p></div>
+      <div class="pillar reveal"><div class="pillar-icon">⭐</div><h3>Quality Guaranteed</h3><p>We stand behind our workmanship with a 12-month aftercare and guarantee policy.</p></div>
+      <div class="pillar reveal"><div class="pillar-icon">🤝</div><h3>Customer First</h3><p>Regular updates, clean worksites, and respectful tradespeople throughout your project.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Preview -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Our Work</p>
+      <h2 class="section-title">Recent Projects</h2>
+    </div>
+    <div class="projects-preview-grid">
+      <div class="project-card large reveal">
+        <div class="project-img" style="background:linear-gradient(135deg,#2c3e50,#3498db)"><div class="project-img-placeholder">📷 Project Image</div></div>
+        <div class="project-info"><span class="project-tag">Full Renovation</span><h3>Victorian Terrace — Full Interior Renovation</h3><p>Dublin 6 &bull; March 2025</p></div>
       </div>
-      <div class="pillars-grid">
-        <div class="pillar reveal">
-          <div class="pillar-icon">🛡️</div>
-          <h3>Fully Insured</h3>
-          <p>Complete public liability and employer's insurance for your peace of mind on every project.</p>
-        </div>
-        <div class="pillar reveal">
-          <div class="pillar-icon">📋</div>
-          <h3>Transparent Pricing</h3>
-          <p>Detailed written quotations with no hidden costs. What we quote is what you pay.</p>
-        </div>
-        <div class="pillar reveal">
-          <div class="pillar-icon">⭐</div>
-          <h3>Quality Guaranteed</h3>
-          <p>We stand behind our workmanship with a comprehensive aftercare and guarantee policy.</p>
-        </div>
-        <div class="pillar reveal">
-          <div class="pillar-icon">🤝</div>
-          <h3>Customer First</h3>
-          <p>Regular updates, clean worksites, and respectful tradespeople throughout your project.</p>
-        </div>
+      <div class="project-card reveal">
+        <div class="project-img" style="background:linear-gradient(135deg,#8e44ad,#3498db)"><div class="project-img-placeholder">📷 Project Image</div></div>
+        <div class="project-info"><span class="project-tag">Extension</span><h3>Rear Extension — Sandymount</h3><p>Dublin 4 &bull; Jan 2025</p></div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-img" style="background:linear-gradient(135deg,#27ae60,#2ecc71)"><div class="project-img-placeholder">📷 Project Image</div></div>
+        <div class="project-info"><span class="project-tag">Kitchen</span><h3>Luxury Kitchen Remodel — Blackrock</h3><p>Co. Dublin &bull; Dec 2024</p></div>
       </div>
     </div>
-  </section>
+    <div class="text-center mt-xl reveal"><a href="projects.html" class="btn btn-dark">View All Projects</a></div>
+  </div>
+</section>
 
-  <!-- Projects Preview -->
-  <section class="section bg-white">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow">Our Work</p>
-        <h2 class="section-title">Recent Projects</h2>
-        <p class="section-subtitle">A selection of our recently completed residential projects.</p>
+<!-- Before/After Preview -->
+<section class="section bg-warm">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Transformations</p>
+      <h2 class="section-title">Before &amp; After</h2>
+      <p class="section-subtitle">Drag the slider to see the transformation.</p>
+    </div>
+    <div class="ba-preview reveal">
+      <div class="ba-slider-wrap">
+        <div class="ba-slider" id="heroSlider">
+          <div class="ba-before"><div class="ba-placeholder before-ph">BEFORE<br/><small>Original Kitchen</small></div></div>
+          <div class="ba-after"><div class="ba-placeholder after-ph">AFTER<br/><small>Transformed Result</small></div></div>
+          <div class="ba-handle" id="heroHandle"><div class="ba-handle-line"></div><div class="ba-handle-circle"><span>◀▶</span></div><div class="ba-handle-line"></div></div>
+        </div>
+        <div class="ba-labels"><span class="ba-label-before">Before</span><span class="ba-label-after">After</span></div>
       </div>
-      <div class="projects-preview-grid">
-        <div class="project-card large reveal">
-          <div class="project-img" style="background:linear-gradient(135deg,#2c3e50,#3498db)">
-            <div class="project-img-placeholder">📷 Project Image</div>
-          </div>
-          <div class="project-info">
-            <span class="project-tag">Full Renovation</span>
-            <h3>Victorian Terrace — Full Interior Renovation</h3>
-            <p>Dublin 6 &bull; Completed March 2025</p>
-          </div>
-        </div>
-        <div class="project-card reveal">
-          <div class="project-img" style="background:linear-gradient(135deg,#8e44ad,#3498db)">
-            <div class="project-img-placeholder">📷 Project Image</div>
-          </div>
-          <div class="project-info">
-            <span class="project-tag">Extension</span>
-            <h3>Rear Extension — Sandymount</h3>
-            <p>Dublin 4 &bull; Completed Jan 2025</p>
-          </div>
-        </div>
-        <div class="project-card reveal">
-          <div class="project-img" style="background:linear-gradient(135deg,#27ae60,#2ecc71)">
-            <div class="project-img-placeholder">📷 Project Image</div>
-          </div>
-          <div class="project-info">
-            <span class="project-tag">Kitchen</span>
-            <h3>Luxury Kitchen Remodel — Blackrock</h3>
-            <p>Co. Dublin &bull; Completed Dec 2024</p>
-          </div>
-        </div>
-      </div>
-      <div class="text-center mt-xl reveal">
-        <button class="btn btn-dark" onclick="showPage('projects')">View All Projects</button>
+      <div class="ba-preview-text">
+        <h3>Kitchen Transformation — Rathmines</h3>
+        <p>Complete kitchen overhaul including new fitted units, quartz worktops, tiling, lighting, and plastering. Completed in 12 working days.</p>
+        <ul class="ba-checklist">
+          <li>✓ New fitted kitchen units</li>
+          <li>✓ Quartz worktops installed</li>
+          <li>✓ Full replastering</li>
+          <li>✓ New electrical points &amp; lighting</li>
+          <li>✓ Tiled splashback</li>
+        </ul>
+        <a href="beforeafter.html" class="btn btn-gold mt-lg">See All Transformations</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Before/After Preview -->
-  <section class="section bg-warm">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow">Transformations</p>
-        <h2 class="section-title">Before &amp; After</h2>
-        <p class="section-subtitle">Drag the slider to see the transformation. Real results from real projects.</p>
+<!-- Testimonials Preview -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="section-header reveal"><p class="section-eyebrow">What Clients Say</p><h2 class="section-title">Trusted by Homeowners</h2></div>
+    <div class="testimonials-slider-wrap">
+      <div class="testimonials-track" id="homeTestiTrack">
+        <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testi-text">"Absolutely transformed our home. The team was professional, clean, and finished on time and on budget. We couldn't be happier with the result."</p><div class="testi-author"><div class="testi-avatar">SC</div><div><strong>Sarah C.</strong><span>Full Home Renovation — Dublin 6</span></div></div></div>
+        <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testi-text">"Our rear extension exceeded expectations. From the initial quote to handover, every step was smooth and well communicated. Highly recommended."</p><div class="testi-author"><div class="testi-avatar">MF</div><div><strong>Mark F.</strong><span>House Extension — Sandymount</span></div></div></div>
+        <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testi-text">"The kitchen renovation is stunning. The team worked around our schedule and delivered an incredible finish. Attention to detail was exceptional."</p><div class="testi-author"><div class="testi-avatar">LA</div><div><strong>Lisa A.</strong><span>Kitchen Renovation — Blackrock</span></div></div></div>
+        <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testi-text">"Honest, reliable, and skilled. They handled our bathroom renovation with great attention to detail. The quality of tiling and plumbing is exceptional."</p><div class="testi-author"><div class="testi-avatar">PO</div><div><strong>Paul O.</strong><span>Bathroom Renovation — Clontarf</span></div></div></div>
       </div>
-      <div class="ba-preview reveal">
-        <div class="ba-slider-wrap">
-          <div class="ba-slider" id="heroSlider">
-            <div class="ba-before">
-              <div class="ba-placeholder before-ph">BEFORE<br/><small>Original State</small></div>
-            </div>
-            <div class="ba-after">
-              <div class="ba-placeholder after-ph">AFTER<br/><small>Transformed Result</small></div>
-            </div>
-            <div class="ba-handle" id="heroHandle">
-              <div class="ba-handle-line"></div>
-              <div class="ba-handle-circle">
-                <span>◀▶</span>
-              </div>
-              <div class="ba-handle-line"></div>
-            </div>
-          </div>
-          <div class="ba-labels">
-            <span class="ba-label-before">Before</span>
-            <span class="ba-label-after">After</span>
-          </div>
-        </div>
-        <div class="ba-preview-text">
-          <h3>Kitchen Transformation — Rathmines</h3>
-          <p>A complete kitchen overhaul including new fitted units, worktops, tiling, lighting, and plastering. Completed in just 12 working days.</p>
-          <ul class="ba-checklist">
-            <li>✓ New fitted kitchen units</li>
-            <li>✓ Quartz worktops installed</li>
-            <li>✓ Full replastering</li>
-            <li>✓ New electrical points &amp; lighting</li>
-            <li>✓ Tiled splashback</li>
-          </ul>
-          <button class="btn btn-gold mt-lg" onclick="showPage('beforeafter')">See All Transformations</button>
-        </div>
+      <div class="slider-controls">
+        <button class="slider-btn" onclick="slideTestimonials('home',-1)">&#8592;</button>
+        <div class="slider-dots" id="homeTestiDots"></div>
+        <button class="slider-btn" onclick="slideTestimonials('home',1)">&#8594;</button>
       </div>
     </div>
-  </section>
+    <div class="text-center mt-xl reveal"><a href="testimonials.html" class="btn btn-dark">Read All Reviews</a></div>
+  </div>
+</section>
 
-  <!-- Testimonials Preview -->
-  <section class="section bg-white">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow">What Clients Say</p>
-        <h2 class="section-title">Trusted by Homeowners</h2>
-      </div>
-      <div class="testimonials-slider-wrap">
-        <div class="testimonials-track" id="homeTestiTrack">
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testi-text">"Absolutely transformed our home. The team was professional, clean, and finished on time and on budget. We couldn't be happier with the result."</p>
-            <div class="testi-author">
-              <div class="testi-avatar">SC</div>
-              <div>
-                <strong>Sarah C.</strong>
-                <span>Full Home Renovation — Dublin 6</span>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testi-text">"Our rear extension exceeded expectations. From the initial quote to handover, every step was smooth and well communicated. Highly recommended."</p>
-            <div class="testi-author">
-              <div class="testi-avatar">MF</div>
-              <div>
-                <strong>Mark F.</strong>
-                <span>House Extension — Sandymount</span>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testi-text">"The kitchen renovation is stunning. The team worked around our schedule, kept the house clean each day, and delivered an incredible finish."</p>
-            <div class="testi-author">
-              <div class="testi-avatar">LA</div>
-              <div>
-                <strong>Lisa A.</strong>
-                <span>Kitchen Renovation — Blackrock</span>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testi-text">"Honest, reliable, and skilled. They handled our bathroom renovation with great attention to detail. The quality of the tiling and plumbing is exceptional."</p>
-            <div class="testi-author">
-              <div class="testi-avatar">PO</div>
-              <div>
-                <strong>Paul O.</strong>
-                <span>Bathroom Renovation — Clontarf</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="slider-controls">
-          <button class="slider-btn" onclick="slideTestimonials('home', -1)">&#8592;</button>
-          <div class="slider-dots" id="homeTestiDots"></div>
-          <button class="slider-btn" onclick="slideTestimonials('home', 1)">&#8594;</button>
+<!-- CTA Banner -->
+<section class="section cta-banner">
+  <div class="cta-banner-bg"></div>
+  <div class="container text-center">
+    <p class="section-eyebrow light reveal">Ready to Start?</p>
+    <h2 class="section-title light reveal">Request Your Free Quotation Today</h2>
+    <p class="section-subtitle light reveal">No obligation. No pressure. Just an honest, detailed quote for your project.</p>
+    <div class="hero-actions reveal">
+      <a href="quote.html" class="btn btn-gold">Get a Free Quote</a>
+      <a href="tel:+353XXXXXXXXX" class="btn btn-outline">Call Us Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Preview -->
+<section class="section bg-warm">
+  <div class="container">
+    <div class="contact-preview-grid">
+      <div class="contact-preview-info reveal">
+        <p class="section-eyebrow">Get in Touch</p>
+        <h2 class="section-title">We'd Love to Hear From You</h2>
+        <div class="contact-items">
+          <div class="contact-item"><span class="contact-icon">📞</span><div><strong>Phone</strong><a href="tel:+353XXXXXXXXX">+353 XX XXX XXXX</a></div></div>
+          <div class="contact-item"><span class="contact-icon">✉️</span><div><strong>Email</strong><a href="mailto:info@companyname.ie">info@companyname.ie</a></div></div>
+          <div class="contact-item"><span class="contact-icon">📍</span><div><strong>Address</strong><span>123 Business Street, Dublin</span></div></div>
+          <div class="contact-item"><span class="contact-icon">🕐</span><div><strong>Hours</strong><span>Mon–Fri: 8am–6pm &bull; Sat: 9am–2pm</span></div></div>
         </div>
       </div>
-      <div class="text-center mt-xl reveal">
-        <button class="btn btn-dark" onclick="showPage('testimonials')">Read All Reviews</button>
+      <div class="contact-preview-form reveal">
+        <form class="quick-form" onsubmit="handleQuickContact(event)">
+          <h3>Send a Quick Message</h3>
+          <div class="form-group"><input type="text" placeholder="Your Name" required /></div>
+          <div class="form-group"><input type="email" placeholder="Your Email" required /></div>
+          <div class="form-group"><input type="tel" placeholder="Your Phone Number" /></div>
+          <div class="form-group"><textarea placeholder="Brief description of your project..." rows="4"></textarea></div>
+          <button type="submit" class="btn btn-gold full-width">Send Message</button>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA Banner -->
-  <section class="section cta-banner">
-    <div class="cta-banner-bg"></div>
-    <div class="container text-center">
-      <p class="section-eyebrow light reveal">Ready to Start?</p>
-      <h2 class="section-title light reveal">Request Your Free Quotation Today</h2>
-      <p class="section-subtitle light reveal">No obligation. No pressure. Just an honest, detailed quote for your project.</p>
-      <div class="hero-actions reveal">
-        <button class="btn btn-gold" onclick="showPage('quote')">Get a Free Quote</button>
-        <a href="tel:+353XXXXXXXXX" class="btn btn-outline">Call Us Now</a>
-      </div>
-    </div>
-  </section>
+</main>
 
-  <!-- Contact Preview -->
-  <section class="section bg-warm">
-    <div class="container">
-      <div class="contact-preview-grid">
-        <div class="contact-preview-info reveal">
-          <p class="section-eyebrow">Get in Touch</p>
-          <h2 class="section-title">We'd Love to Hear From You</h2>
-          <div class="contact-items">
-            <div class="contact-item">
-              <span class="contact-icon">📞</span>
-              <div>
-                <strong>Phone</strong>
-                <a href="tel:+353XXXXXXXXX">+353 XX XXX XXXX</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon">✉️</span>
-              <div>
-                <strong>Email</strong>
-                <a href="mailto:info@companyname.ie">info@companyname.ie</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon">📍</span>
-              <div>
-                <strong>Address</strong>
-                <span>123 Business Street, Dublin, Ireland</span>
-              </div>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon">🕐</span>
-              <div>
-                <strong>Hours</strong>
-                <span>Mon–Fri: 8am–6pm &bull; Sat: 9am–2pm</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="contact-preview-form reveal">
-          <form class="quick-form" onsubmit="handleQuickContact(event)">
-            <h3>Send a Quick Message</h3>
-            <div class="form-group">
-              <input type="text" placeholder="Your Name" required />
-            </div>
-            <div class="form-group">
-              <input type="email" placeholder="Your Email" required />
-            </div>
-            <div class="form-group">
-              <input type="tel" placeholder="Your Phone Number" />
-            </div>
-            <div class="form-group">
-              <textarea placeholder="Brief description of your project..." rows="4"></textarea>
-            </div>
-            <button type="submit" class="btn btn-gold full-width">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</div><!-- /page-home -->
-
-<!-- ===================== ABOUT US PAGE ===================== -->
-<div id="page-about" class="page">
-
-  <section class="page-hero bg-dark">
-    <div class="container text-center">
-      <p class="section-eyebrow light reveal">Our Story</p>
-      <h1 class="section-title light reveal">About COMPANY NAME</h1>
-      <p class="section-subtitle light reveal">Family-run. Professionally delivered. Genuinely passionate about building better homes.</p>
-    </div>
-  </section>
-
-  <section class="section bg-white">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-img-wrap reveal">
-          <div class="about-img-ph">📷 Team / Site Photo</div>
-          <div class="about-badge">
-            <strong>Est. 2009</strong>
-            <span>Dublin, Ireland</span>
-          </div>
-        </div>
-        <div class="about-text reveal">
-          <p class="section-eyebrow">Who We Are</p>
-          <h2 class="section-title">Building Trust,<br />One Project at a Time</h2>
-          <p class="body-text">COMPANY NAME was founded in 2009 by [Founder Name], a qualified tradesperson with a passion for quality construction and an unwavering commitment to customer satisfaction.</p>
-          <p class="body-text">What started as a small team of skilled tradespeople has grown into one of the most trusted residential construction companies in the Dublin area, with over 500 successfully completed projects and a reputation built on reliability, honesty, and exceptional workmanship.</p>
-          <p class="body-text">We are a fully insured, registered company with a team of directly employed and carefully vetted subcontractors — all sharing our commitment to professional standards.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section bg-warm">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow">What Drives Us</p>
-        <h2 class="section-title">Our Values</h2>
-      </div>
-      <div class="values-grid">
-        <div class="value-card reveal">
-          <div class="value-num">01</div>
-          <h3>Honesty &amp; Transparency</h3>
-          <p>We give detailed written quotations with no hidden costs. We communicate openly throughout your project and tell you what you need to hear, not just what you want to hear.</p>
-        </div>
-        <div class="value-card reveal">
-          <div class="value-num">02</div>
-          <h3>Quality Workmanship</h3>
-          <p>Every job is completed to the standard we would be proud of in our own home. We do not cut corners and we do not compromise on materials or method.</p>
-        </div>
-        <div class="value-card reveal">
-          <div class="value-num">03</div>
-          <h3>Respect for Your Home</h3>
-          <p>We treat your home as if it were our own. Clean, tidy, and respectful tradespeople from day one to final handover.</p>
-        </div>
-        <div class="value-card reveal">
-          <div class="value-num">04</div>
-          <h3>Reliability</h3>
-          <p>We show up when we say we will. We finish when we say we will. And if anything changes, you are the first to know.</p>
-        </div>
-        <div class="value-card reveal">
-          <div class="value-num">05</div>
-          <h3>Safety First</h3>
-          <p>All our work complies with current Irish building regulations and health &amp; safety requirements. Fully insured and fully compliant.</p>
-        </div>
-        <div class="value-card reveal">
-          <div class="value-num">06</div>
-          <h3>Customer Partnership</h3>
-          <p>We involve you at every key decision point. Your project is a collaboration, and your satisfaction is our primary measure of success.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section bg-dark">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow light">Our Promise</p>
-        <h2 class="section-title light">The COMPANY NAME Guarantee</h2>
-      </div>
-      <div class="guarantee-grid">
-        <div class="guarantee-item reveal">
-          <span class="g-icon">✅</span>
-          <p>Written, detailed quotation before any work begins</p>
-        </div>
-        <div class="guarantee-item reveal">
-          <span class="g-icon">✅</span>
-          <p>Fully insured public liability coverage on all projects</p>
-        </div>
-        <div class="guarantee-item reveal">
-          <span class="g-icon">✅</span>
-          <p>Clean and tidy worksite maintained throughout</p>
-        </div>
-        <div class="guarantee-item reveal">
-          <span class="g-icon">✅</span>
-          <p>Regular project updates and open communication</p>
-        </div>
-        <div class="guarantee-item reveal">
-          <span class="g-icon">✅</span>
-          <p>12-month aftercare guarantee on all completed work</p>
-        </div>
-        <div class="guarantee-item reveal">
-          <span class="g-icon">✅</span>
-          <p>All works comply with Irish building regulations</p>
-        </div>
-        <div class="guarantee-item reveal">
-          <span class="g-icon">✅</span>
-          <p>No hidden costs — what you quote is what you pay</p>
-        </div>
-        <div class="guarantee-item reveal">
-          <span class="g-icon">✅</span>
-          <p>Free site visit and consultation before quotation</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section bg-white">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow">How We Work</p>
-        <h2 class="section-title">Our Simple Process</h2>
-        <p class="section-subtitle">From your first enquiry to final handover, here's what to expect.</p>
-      </div>
-      <div class="process-steps">
-        <div class="process-step reveal">
-          <div class="step-num">1</div>
-          <div class="step-content">
-            <h3>Initial Enquiry</h3>
-            <p>Contact us by phone, email, or our online form. We'll discuss your project briefly and arrange a convenient time to visit.</p>
-          </div>
-        </div>
-        <div class="process-connector"></div>
-        <div class="process-step reveal">
-          <div class="step-num">2</div>
-          <div class="step-content">
-            <h3>Free Site Visit</h3>
-            <p>We visit your property to fully understand the scope of work. No charge, no obligation — just a professional conversation about your project.</p>
-          </div>
-        </div>
-        <div class="process-connector"></div>
-        <div class="process-step reveal">
-          <div class="step-num">3</div>
-          <div class="step-content">
-            <h3>Detailed Quotation</h3>
-            <p>Within 5 working days we provide a clear, written quotation with a full breakdown of all works and materials included.</p>
-          </div>
-        </div>
-        <div class="process-connector"></div>
-        <div class="process-step reveal">
-          <div class="step-num">4</div>
-          <div class="step-content">
-            <h3>Project Start</h3>
-            <p>Once approved, we schedule your project start date and assign a dedicated site manager to oversee all works.</p>
-          </div>
-        </div>
-        <div class="process-connector"></div>
-        <div class="process-step reveal">
-          <div class="step-num">5</div>
-          <div class="step-content">
-            <h3>Handover &amp; Aftercare</h3>
-            <p>Final walkthrough with you, snag completion, and a 12-month aftercare commitment. Your home, transformed.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section cta-banner">
-    <div class="cta-banner-bg"></div>
-    <div class="container text-center">
-      <h2 class="section-title light reveal">Ready to Start Your Project?</h2>
-      <p class="section-subtitle light reveal">Get in touch for a free, no-obligation quotation today.</p>
-      <button class="btn btn-gold reveal" onclick="showPage('quote')">Get a Free Quote</button>
-    </div>
-  </section>
-
-</div><!-- /page-about -->
-
-<!-- ===================== SERVICES PAGE ===================== -->
-<div id="page-services" class="page">
-
-  <section class="page-hero bg-dark">
-    <div class="container text-center">
-      <p class="section-eyebrow light reveal">What We Offer</p>
-      <h1 class="section-title light reveal">Our Services</h1>
-      <p class="section-subtitle light reveal">A comprehensive range of residential construction and renovation services, all delivered to the highest standard.</p>
-    </div>
-  </section>
-
-  <section class="section bg-white">
-    <div class="container">
-      <div class="service-detail-card reveal">
-        <div class="sdc-icon">🏗️</div>
-        <div class="sdc-content">
-          <h2>Residential Construction</h2>
-          <p>Whether you're building a new home from the ground up or undertaking a major structural project, our experienced construction team handles every phase with precision and professionalism — from groundworks and foundations to roofing, plastering, and final fit-out.</p>
-          <div class="sdc-benefits">
-            <h4>What's Included</h4>
-            <ul>
-              <li>New home construction</li>
-              <li>Structural alterations and load-bearing work</li>
-              <li>Groundworks and foundations</li>
-              <li>Block and brick construction</li>
-              <li>Roofing and insulation</li>
-              <li>External finishes and rendering</li>
-            </ul>
-          </div>
-          <div class="sdc-ideal">
-            <strong>Ideal for:</strong> Clients building a new property, undertaking major structural work, or requiring a full-scope construction team.
-          </div>
-          <button class="btn btn-gold mt-lg" onclick="showPage('quote')">Get a Quote for This Service</button>
-        </div>
-      </div>
-
-      <div class="service-detail-card reveal">
-        <div class="sdc-icon">🔨</div>
-        <div class="sdc-content">
-          <h2>Home Renovation</h2>
-          <p>A full home renovation is one of the most significant investments you can make. Our team manages every trade and every detail, delivering a complete transformation with minimal stress for you.</p>
-          <div class="sdc-benefits">
-            <h4>What's Included</h4>
-            <ul>
-              <li>Full interior strip-out and redesign</li>
-              <li>Replastering and drylining</li>
-              <li>New flooring throughout</li>
-              <li>Electrical rewire and upgrade</li>
-              <li>Plumbing upgrade and re-routing</li>
-              <li>Complete decoration and finishing</li>
-            </ul>
-          </div>
-          <div class="sdc-ideal">
-            <strong>Ideal for:</strong> Homeowners looking to modernise, refurbish, or fully transform their existing property.
-          </div>
-          <button class="btn btn-gold mt-lg" onclick="showPage('quote')">Get a Quote for This Service</button>
-        </div>
-      </div>
-
-      <div class="service-detail-card reveal">
-        <div class="sdc-icon">🏠</div>
-        <div class="sdc-content">
-          <h2>House Extensions</h2>
-          <p>Extend your home rather than move. Whether it's a rear extension, side extension, or a double-storey addition, we handle planning, design coordination, structural build, and full internal fit-out.</p>
-          <div class="sdc-benefits">
-            <h4>What's Included</h4>
-            <ul>
-              <li>Rear, side, and wrap-around extensions</li>
-              <li>Double-storey extensions</li>
-              <li>Garage conversions</li>
-              <li>Attic conversions</li>
-              <li>Planning and architectural liaison</li>
-              <li>Full structural and internal works</li>
-            </ul>
-          </div>
-          <div class="sdc-ideal">
-            <strong>Ideal for:</strong> Growing families needing more space without the cost of moving home.
-          </div>
-          <button class="btn btn-gold mt-lg" onclick="showPage('quote')">Get a Quote for This Service</button>
-        </div>
-      </div>
-
-      <div class="service-detail-card reveal">
-        <div class="sdc-icon">🛁</div>
-        <div class="sdc-content">
-          <h2>Bathroom Renovation</h2>
-          <p>From a simple refresh to a full luxury redesign, our bathroom specialists deliver stunning results. We handle tiling, plumbing, electrical, and all fixtures to create your perfect bathroom.</p>
-          <div class="sdc-benefits">
-            <h4>What's Included</h4>
-            <ul>
-              <li>Full strip-out and replastering</li>
-              <li>Walk-in showers and wet rooms</li>
-              <li>Premium tiling (floor and walls)</li>
-              <li>All plumbing works and fixtures</li>
-              <li>Underfloor heating installation</li>
-              <li>Electrical and lighting design</li>
-            </ul>
-          </div>
-          <div class="sdc-ideal">
-            <strong>Ideal for:</strong> Homeowners wanting to upgrade an outdated bathroom or create a luxury en-suite.
-          </div>
-          <button class="btn btn-gold mt-lg" onclick="showPage('quote')">Get a Quote for This Service</button>
-        </div>
-      </div>
-
-      <div class="service-detail-card reveal">
-        <div class="sdc-icon">🍳</div>
-        <div class="sdc-content">
-          <h2>Kitchen Renovation</h2>
-          <p>The kitchen is the heart of the home. Our team works closely with you to design and build a kitchen that balances beauty with practicality — and adds real value to your property.</p>
-          <div class="sdc-benefits">
-            <h4>What's Included</h4>
-            <ul>
-              <li>Supply and fit of kitchen units</li>
-              <li>Worktop installation (quartz, granite, solid wood)</li>
-              <li>Tiling and splashback work</li>
-              <li>All plumbing connections</li>
-              <li>Electrical points and lighting</li>
-              <li>Plastering and decoration</li>
-            </ul>
-          </div>
-          <div class="sdc-ideal">
-            <strong>Ideal for:</strong> Anyone wanting to modernise their kitchen or increase their home's value before sale.
-          </div>
-          <button class="btn btn-gold mt-lg" onclick="showPage('quote')">Get a Quote for This Service</button>
-        </div>
-      </div>
-
-      <div class="service-detail-card reveal">
-        <div class="sdc-icon">🪣</div>
-        <div class="sdc-content">
-          <h2>Painting &amp; Decorating</h2>
-          <p>Professional interior and exterior painting with meticulous surface preparation, premium materials, and a clean, sharp finish that lasts.</p>
-          <div class="sdc-benefits">
-            <h4>What's Included</h4>
-            <ul>
-              <li>Full interior painting (walls, ceilings, woodwork)</li>
-              <li>Exterior painting and rendering</li>
-              <li>Surface preparation and priming</li>
-              <li>Wallpaper hanging and removal</li>
-              <li>Specialist finishes</li>
-              <li>Colour consultation available</li>
-            </ul>
-          </div>
-          <button class="btn btn-gold mt-lg" onclick="showPage('quote')">Get a Quote for This Service</button>
-        </div>
-      </div>
-
-      <div class="service-detail-card reveal">
-        <div class="sdc-icon">🔧</div>
-        <div class="sdc-content">
-          <h2>Plumbing Works</h2>
-          <p>Our qualified plumbers handle everything from new installations to emergency repairs — efficiently and to the highest standard.</p>
-          <div class="sdc-benefits">
-            <h4>What's Included</h4>
-            <ul>
-              <li>Full property plumbing installations</li>
-              <li>Heating system installation and upgrade</li>
-              <li>Bathroom and kitchen plumbing</li>
-              <li>Water pressure and tank work</li>
-              <li>Leak detection and repair</li>
-              <li>Emergency call-out service</li>
-            </ul>
-          </div>
-          <button class="btn btn-gold mt-lg" onclick="showPage('quote')">Get a Quote for This Service</button>
-        </div>
-      </div>
-
-      <div class="service-detail-card reveal">
-        <div class="sdc-icon">⚡</div>
-        <div class="sdc-content">
-          <h2>Electrical Works</h2>
-          <p>Safe, certified electrical work for new builds, renovations, and upgrades. All works carried out by registered electricians and fully certified.</p>
-          <div class="sdc-benefits">
-            <h4>What's Included</h4>
-            <ul>
-              <li>Full electrical rewires</li>
-              <li>Consumer unit upgrades</li>
-              <li>New sockets, lighting, and circuits</li>
-              <li>EV charger installation</li>
-              <li>Smoke and CO alarm systems</li>
-              <li>Electrical certification</li>
-            </ul>
-          </div>
-          <button class="btn btn-gold mt-lg" onclick="showPage('quote')">Get a Quote for This Service</button>
-        </div>
-      </div>
-
-      <div class="service-detail-card reveal">
-        <div class="sdc-icon">🔩</div>
-        <div class="sdc-content">
-          <h2>Repairs &amp; Maintenance</h2>
-          <p>No job too small. Our tradespeople handle all types of general property repairs and maintenance — keeping your home in perfect condition.</p>
-          <div class="sdc-benefits">
-            <h4>What's Included</h4>
-            <ul>
-              <li>General snag and repair works</li>
-              <li>Roof and gutter repairs</li>
-              <li>Fascia and soffit replacement</li>
-              <li>Window and door repairs</li>
-              <li>Damp proofing treatment</li>
-              <li>General property upkeep</li>
-            </ul>
-          </div>
-          <button class="btn btn-gold mt-lg" onclick="showPage('quote')">Get a Quote for This Service</button>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-</div><!-- /page-services -->
-
-<!-- ===================== PROJECTS PAGE ===================== -->
-<div id="page-projects" class="page">
-
-  <section class="page-hero bg-dark">
-    <div class="container text-center">
-      <p class="section-eyebrow light reveal">Our Portfolio</p>
-      <h1 class="section-title light reveal">Completed Projects</h1>
-      <p class="section-subtitle light reveal">Browse our portfolio of successfully completed residential projects across Dublin and surrounding areas.</p>
-    </div>
-  </section>
-
-  <section class="section bg-white">
-    <div class="container">
-      <div class="filter-bar reveal">
-        <button class="filter-btn active" onclick="filterProjects(this,'all')">All</button>
-        <button class="filter-btn" onclick="filterProjects(this,'renovation')">Renovation</button>
-        <button class="filter-btn" onclick="filterProjects(this,'extension')">Extension</button>
-        <button class="filter-btn" onclick="filterProjects(this,'kitchen')">Kitchen</button>
-        <button class="filter-btn" onclick="filterProjects(this,'bathroom')">Bathroom</button>
-        <button class="filter-btn" onclick="filterProjects(this,'painting')">Painting</button>
-      </div>
-      <div class="projects-full-grid" id="projectsGrid">
-
-        <div class="pf-card reveal" data-cat="renovation">
-          <div class="pf-img" style="background:linear-gradient(135deg,#2c3e50,#4ca1af)">
-            <div class="pf-img-ph">📷</div>
-            <span class="pf-tag">Full Renovation</span>
-          </div>
-          <div class="pf-info">
-            <h3>Victorian Terrace — Full Renovation</h3>
-            <p class="pf-meta">📍 Dublin 6 &bull; ⏱ 14 weeks &bull; ✅ March 2025</p>
-            <p>Complete interior renovation of a 4-bedroom Victorian terrace including new kitchen, 2 bathrooms, full electrical rewire, replastering and decoration.</p>
-          </div>
-        </div>
-
-        <div class="pf-card reveal" data-cat="extension">
-          <div class="pf-img" style="background:linear-gradient(135deg,#8e44ad,#9b59b6)">
-            <div class="pf-img-ph">📷</div>
-            <span class="pf-tag">Extension</span>
-          </div>
-          <div class="pf-info">
-            <h3>Rear Extension &amp; Open Plan</h3>
-            <p class="pf-meta">📍 Sandymount, D4 &bull; ⏱ 10 weeks &bull; ✅ Jan 2025</p>
-            <p>25m² rear extension creating an open-plan kitchen-living space. Structural steel beam, full glazing, underfloor heating and garden access.</p>
-          </div>
-        </div>
-
-        <div class="pf-card reveal" data-cat="kitchen">
-          <div class="pf-img" style="background:linear-gradient(135deg,#27ae60,#2ecc71)">
-            <div class="pf-img-ph">📷</div>
-            <span class="pf-tag">Kitchen</span>
-          </div>
-          <div class="pf-info">
-            <h3>Luxury Kitchen Remodel</h3>
-            <p class="pf-meta">📍 Blackrock, Co. Dublin &bull; ⏱ 3 weeks &bull; ✅ Dec 2024</p>
-            <p>Complete kitchen remodel including new fitted units, quartz island, full tiling, replastering, new electrics, and bifold access to the garden.</p>
-          </div>
-        </div>
-
-        <div class="pf-card reveal" data-cat="bathroom">
-          <div class="pf-img" style="background:linear-gradient(135deg,#1a237e,#283593)">
-            <div class="pf-img-ph">📷</div>
-            <span class="pf-tag">Bathroom</span>
-          </div>
-          <div class="pf-info">
-            <h3>Master En-Suite Transformation</h3>
-            <p class="pf-meta">📍 Clontarf, D3 &bull; ⏱ 2 weeks &bull; ✅ Nov 2024</p>
-            <p>Luxury wet room transformation with large format tiles, walk-in shower, heated towel rail, underfloor heating, and bespoke vanity unit.</p>
-          </div>
-        </div>
-
-        <div class="pf-card reveal" data-cat="extension">
-          <div class="pf-img" style="background:linear-gradient(135deg,#c0392b,#e74c3c)">
-            <div class="pf-img-ph">📷</div>
-            <span class="pf-tag">Attic Conversion</span>
-          </div>
-          <div class="pf-info">
-            <h3>Attic Conversion — New Bedroom</h3>
-            <p class="pf-meta">📍 Rathgar, D6W &bull; ⏱ 6 weeks &bull; ✅ Oct 2024</p>
-            <p>Full attic conversion creating a 4th bedroom with en-suite, velux windows, new staircase, insulation, and full decoration.</p>
-          </div>
-        </div>
-
-        <div class="pf-card reveal" data-cat="renovation">
-          <div class="pf-img" style="background:linear-gradient(135deg,#f39c12,#d68910)">
-            <div class="pf-img-ph">📷</div>
-            <span class="pf-tag">Renovation</span>
-          </div>
-          <div class="pf-info">
-            <h3>Pre-Sale Refurbishment</h3>
-            <p class="pf-meta">📍 Ranelagh, D6 &bull; ⏱ 4 weeks &bull; ✅ Sep 2024</p>
-            <p>Full pre-sale refresh including replastering, new flooring, kitchen and bathroom updates, full decoration and exterior painting. Property sold above asking.</p>
-          </div>
-        </div>
-
-        <div class="pf-card reveal" data-cat="painting">
-          <div class="pf-img" style="background:linear-gradient(135deg,#16a085,#1abc9c)">
-            <div class="pf-img-ph">📷</div>
-            <span class="pf-tag">Painting</span>
-          </div>
-          <div class="pf-info">
-            <h3>Full Exterior Repaint</h3>
-            <p class="pf-meta">📍 Terenure, D6W &bull; ⏱ 1 week &bull; ✅ Aug 2024</p>
-            <p>Full exterior repaint including masonry preparation, anti-mould treatment, premium weatherproof paint system, and woodwork refinishing.</p>
-          </div>
-        </div>
-
-        <div class="pf-card reveal" data-cat="renovation">
-          <div class="pf-img" style="background:linear-gradient(135deg,#2c3e50,#34495e)">
-            <div class="pf-img-ph">📷</div>
-            <span class="pf-tag">New Build</span>
-          </div>
-          <div class="pf-info">
-            <h3>Detached New Build — Full Fit-Out</h3>
-            <p class="pf-meta">📍 Dalkey, Co. Dublin &bull; ⏱ 28 weeks &bull; ✅ Jul 2024</p>
-            <p>Full residential new build fit-out including all mechanical and electrical works, insulation, drylining, kitchen and bathroom installation, and complete decoration.</p>
-          </div>
-        </div>
-
-      </div>
-      <div class="text-center mt-xl reveal">
-        <button class="btn btn-gold" onclick="showPage('quote')">Start Your Own Project</button>
-      </div>
-    </div>
-  </section>
-
-</div><!-- /page-projects -->
-
-<!-- ===================== BEFORE & AFTER PAGE ===================== -->
-<div id="page-beforeafter" class="page">
-
-  <section class="page-hero bg-dark">
-    <div class="container text-center">
-      <p class="section-eyebrow light reveal">Real Transformations</p>
-      <h1 class="section-title light reveal">Before &amp; After</h1>
-      <p class="section-subtitle light reveal">Drag the slider to see the transformation. Every image is from a real completed project.</p>
-    </div>
-  </section>
-
-  <section class="section bg-warm">
-    <div class="container">
-
-      <div class="ba-full-item reveal">
-        <div class="ba-item-label">
-          <span class="ba-project-tag">Kitchen Renovation — Rathmines</span>
-          <h3>Complete Kitchen Transformation</h3>
-          <p>Strip-out of original 1970s kitchen, full replastering, new fitted units, quartz worktops, tiled splashback, new electrics and plumbing connections. Completed in 12 working days.</p>
-        </div>
-        <div class="ba-slider-container">
-          <div class="ba-slider" id="slider1">
-            <div class="ba-before">
-              <div class="ba-placeholder before-ph large-ph">BEFORE<br/><small>Original 1970s Kitchen</small></div>
-            </div>
-            <div class="ba-after">
-              <div class="ba-placeholder after-ph large-ph">AFTER<br/><small>Modern Fitted Kitchen</small></div>
-            </div>
-            <div class="ba-handle" id="handle1">
-              <div class="ba-handle-line"></div>
-              <div class="ba-handle-circle"><span>◀▶</span></div>
-              <div class="ba-handle-line"></div>
-            </div>
-          </div>
-          <div class="ba-labels">
-            <span class="ba-label-before">Before</span>
-            <span class="ba-label-after">After</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="ba-full-item reveal">
-        <div class="ba-item-label">
-          <span class="ba-project-tag">Bathroom Renovation — Clontarf</span>
-          <h3>Luxury En-Suite Creation</h3>
-          <p>Dated bathroom transformed into a luxury wet room with large format porcelain tiles, frameless walk-in shower, bespoke vanity unit, and underfloor heating. 10 working days.</p>
-        </div>
-        <div class="ba-slider-container">
-          <div class="ba-slider" id="slider2">
-            <div class="ba-before">
-              <div class="ba-placeholder before-ph large-ph">BEFORE<br/><small>Outdated Bathroom</small></div>
-            </div>
-            <div class="ba-after">
-              <div class="ba-placeholder after-ph large-ph">AFTER<br/><small>Luxury Wet Room</small></div>
-            </div>
-            <div class="ba-handle" id="handle2">
-              <div class="ba-handle-line"></div>
-              <div class="ba-handle-circle"><span>◀▶</span></div>
-              <div class="ba-handle-line"></div>
-            </div>
-          </div>
-          <div class="ba-labels">
-            <span class="ba-label-before">Before</span>
-            <span class="ba-label-after">After</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="ba-full-item reveal">
-        <div class="ba-item-label">
-          <span class="ba-project-tag">Living Room — Rathgar</span>
-          <h3>Full Interior Renovation</h3>
-          <p>Complete strip-out and redesign of the ground floor. Walls removed to create open-plan living, new flooring, replastering, feature fireplace, full decoration and lighting design.</p>
-        </div>
-        <div class="ba-slider-container">
-          <div class="ba-slider" id="slider3">
-            <div class="ba-before">
-              <div class="ba-placeholder before-ph large-ph">BEFORE<br/><small>Closed Partitioned Rooms</small></div>
-            </div>
-            <div class="ba-after">
-              <div class="ba-placeholder after-ph large-ph">AFTER<br/><small>Open Plan Living Space</small></div>
-            </div>
-            <div class="ba-handle" id="handle3">
-              <div class="ba-handle-line"></div>
-              <div class="ba-handle-circle"><span>◀▶</span></div>
-              <div class="ba-handle-line"></div>
-            </div>
-          </div>
-          <div class="ba-labels">
-            <span class="ba-label-before">Before</span>
-            <span class="ba-label-after">After</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="ba-full-item reveal">
-        <div class="ba-item-label">
-          <span class="ba-project-tag">Exterior Painting — Terenure</span>
-          <h3>Exterior Transformation</h3>
-          <p>Full exterior repaint following thorough surface preparation, crack repair, anti-mould treatment, and application of premium exterior weatherproof system. 5 working days.</p>
-        </div>
-        <div class="ba-slider-container">
-          <div class="ba-slider" id="slider4">
-            <div class="ba-before">
-              <div class="ba-placeholder before-ph large-ph">BEFORE<br/><small>Faded, Cracked Exterior</small></div>
-            </div>
-            <div class="ba-after">
-              <div class="ba-placeholder after-ph large-ph">AFTER<br/><small>Fresh Premium Exterior</small></div>
-            </div>
-            <div class="ba-handle" id="handle4">
-              <div class="ba-handle-line"></div>
-              <div class="ba-handle-circle"><span>◀▶</span></div>
-              <div class="ba-handle-line"></div>
-            </div>
-          </div>
-          <div class="ba-labels">
-            <span class="ba-label-before">Before</span>
-            <span class="ba-label-after">After</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section cta-banner">
-    <div class="cta-banner-bg"></div>
-    <div class="container text-center">
-      <h2 class="section-title light reveal">Ready for Your Own Transformation?</h2>
-      <p class="section-subtitle light reveal">Get a free, no-obligation quotation for your project today.</p>
-      <button class="btn btn-gold reveal" onclick="showPage('quote')">Get a Free Quote</button>
-    </div>
-  </section>
-
-</div><!-- /page-beforeafter -->
-
-<!-- ===================== TESTIMONIALS PAGE ===================== -->
-<div id="page-testimonials" class="page">
-
-  <section class="page-hero bg-dark">
-    <div class="container text-center">
-      <p class="section-eyebrow light reveal">Client Reviews</p>
-      <h1 class="section-title light reveal">What Our Clients Say</h1>
-      <p class="section-subtitle light reveal">Don't just take our word for it — here's what homeowners across Dublin say about our work.</p>
-    </div>
-  </section>
-
-  <section class="section bg-white">
-    <div class="container">
-      <div class="testi-rating-summary reveal">
-        <div class="rating-big">5.0</div>
-        <div class="rating-stars-big">★★★★★</div>
-        <div class="rating-count">Based on 120+ verified reviews</div>
-        <div class="rating-platforms">
-          <span>Google ★★★★★</span>
-          <span>Houzz ★★★★★</span>
-          <span>Checkatrade ★★★★★</span>
-        </div>
-      </div>
-
-      <div class="testimonials-full-grid">
-
-        <div class="testi-full-card reveal">
-          <div class="stars">★★★★★</div>
-          <p>"Absolutely transformed our home. The team was professional, clean, and finished on time and on budget. We couldn't be happier with the result. From the initial site visit to the final snag, everything was seamless."</p>
-          <div class="testi-author">
-            <div class="testi-avatar large-av">SC</div>
-            <div>
-              <strong>Sarah C.</strong>
-              <span>Full Home Renovation — Dublin 6</span>
-              <span class="testi-date">March 2025</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-full-card reveal">
-          <div class="stars">★★★★★</div>
-          <p>"Our rear extension exceeded every expectation. From the initial quote to handover, every step was smooth and well communicated. The build quality is outstanding and it completely changed how we live in our home."</p>
-          <div class="testi-author">
-            <div class="testi-avatar large-av">MF</div>
-            <div>
-              <strong>Mark F.</strong>
-              <span>House Extension — Sandymount</span>
-              <span class="testi-date">January 2025</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-full-card reveal">
-          <div class="stars">★★★★★</div>
-          <p>"The kitchen renovation is absolutely stunning. The team worked around our schedule, kept the house clean and tidy each day, and delivered an incredible finish. The attention to detail on the tiling was exceptional."</p>
-          <div class="testi-author">
-            <div class="testi-avatar large-av">LA</div>
-            <div>
-              <strong>Lisa A.</strong>
-              <span>Kitchen Renovation — Blackrock</span>
-              <span class="testi-date">December 2024</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-full-card reveal">
-          <div class="stars">★★★★★</div>
-          <p>"Honest, reliable, and genuinely skilled craftspeople. They handled our bathroom renovation with great attention to detail. The quality of the tiling and plumbing work is exceptional. Already recommended them to three neighbours."</p>
-          <div class="testi-author">
-            <div class="testi-avatar large-av">PO</div>
-            <div>
-              <strong>Paul O.</strong>
-              <span>Bathroom Renovation — Clontarf</span>
-              <span class="testi-date">November 2024</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-full-card reveal">
-          <div class="stars">★★★★★</div>
-          <p>"They repainted the full interior and exterior of our house before we put it on the market. The finish is impeccable. The property sold above asking price within a week. Worth every cent."</p>
-          <div class="testi-author">
-            <div class="testi-avatar large-av">JD</div>
-            <div>
-              <strong>Jennifer D.</strong>
-              <span>Pre-Sale Refurbishment — Ranelagh</span>
-              <span class="testi-date">September 2024</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-full-card reveal">
-          <div class="stars">★★★★★</div>
-          <p>"Our attic conversion was completed on time and to an exceptional standard. The new staircase, bedroom layout, and en-suite are all beautifully finished. The team was respectful, communicative, and genuinely passionate about the work."</p>
-          <div class="testi-author">
-            <div class="testi-avatar large-av">RK</div>
-            <div>
-              <strong>Rachel K.</strong>
-              <span>Attic Conversion — Rathgar</span>
-              <span class="testi-date">October 2024</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-full-card reveal">
-          <div class="stars">★★★★★</div>
-          <p>"I was nervous about having work done as I'd had bad experiences before. From the very first call, COMPANY NAME were different. Professional, upfront, and incredibly tidy. The rewire and replaster job is perfect."</p>
-          <div class="testi-author">
-            <div class="testi-avatar large-av">TM</div>
-            <div>
-              <strong>Tom M.</strong>
-              <span>Electrical Rewire — Terenure</span>
-              <span class="testi-date">August 2024</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-full-card reveal">
-          <div class="stars">★★★★★</div>
-          <p>"Excellent communication from start to finish. The project manager kept us informed at every stage and any small issues that arose were dealt with immediately. The finished result is everything we hoped for."</p>
-          <div class="testi-author">
-            <div class="testi-avatar large-av">AM</div>
-            <div>
-              <strong>Anne M.</strong>
-              <span>Full Renovation — Stillorgan</span>
-              <span class="testi-date">July 2024</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="section cta-banner">
-    <div class="cta-banner-bg"></div>
-    <div class="container text-center">
-      <h2 class="section-title light reveal">Join Our Happy Clients</h2>
-      <p class="section-subtitle light reveal">Get your free, no-obligation quotation today.</p>
-      <button class="btn btn-gold reveal" onclick="showPage('quote')">Get a Free Quote</button>
-    </div>
-  </section>
-
-</div><!-- /page-testimonials -->
-
-<!-- ===================== GET A QUOTE PAGE ===================== -->
-<div id="page-quote" class="page">
-
-  <section class="page-hero bg-dark">
-    <div class="container text-center">
-      <p class="section-eyebrow light reveal">Free &amp; No Obligation</p>
-      <h1 class="section-title light reveal">Get a Free Quotation</h1>
-      <p class="section-subtitle light reveal">Fill in the form below and we'll be in touch within 24 hours to arrange your free site visit and quotation.</p>
-    </div>
-  </section>
-
-  <section class="section bg-warm">
-    <div class="container">
-      <div class="quote-layout">
-        <div class="quote-form-wrap reveal">
-          <form class="quote-form" onsubmit="handleQuoteSubmit(event)" id="quoteForm">
-            <h2>Project Quotation Request</h2>
-            <p class="form-intro">All fields marked * are required. We typically respond within 24 hours.</p>
-
-            <div class="form-section-title">Personal Details</div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Full Name *</label>
-                <input type="text" name="fullName" placeholder="John Smith" required />
-              </div>
-              <div class="form-group">
-                <label>Phone Number *</label>
-                <input type="tel" name="phone" placeholder="+353 XX XXX XXXX" required />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Email Address *</label>
-                <input type="email" name="email" placeholder="john@example.com" required />
-              </div>
-              <div class="form-group">
-                <label>Property Address *</label>
-                <input type="text" name="address" placeholder="123 Main Street, Dublin" required />
-              </div>
-            </div>
-
-            <div class="form-section-title">Project Details</div>
-            <div class="form-group">
-              <label>Type of Project *</label>
-              <select name="projectType" required>
-                <option value="">— Select a service —</option>
-                <option>Residential Construction (New Build)</option>
-                <option>Full Home Renovation</option>
-                <option>House Extension</option>
-                <option>Attic Conversion</option>
-                <option>Bathroom Renovation</option>
-                <option>Kitchen Renovation</option>
-                <option>Painting &amp; Decorating</option>
-                <option>Plumbing Works</option>
-                <option>Electrical Works</option>
-                <option>Repairs &amp; Maintenance</option>
-                <option>Multiple / Other</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Estimated Budget Range</label>
-                <select name="budget">
-                  <option value="">— Select a range —</option>
-                  <option>Under €5,000</option>
-                  <option>€5,000 – €15,000</option>
-                  <option>€15,000 – €30,000</option>
-                  <option>€30,000 – €60,000</option>
-                  <option>€60,000 – €100,000</option>
-                  <option>Over €100,000</option>
-                  <option>Not sure yet</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Preferred Start Date</label>
-                <input type="date" name="startDate" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Description of Work Required *</label>
-              <textarea name="description" rows="6" placeholder="Please describe your project in as much detail as possible. Include the current state of the area and what you'd like to achieve..." required></textarea>
-            </div>
-
-            <div class="form-section-title">Preferences</div>
-            <div class="form-group">
-              <label>Preferred Contact Method</label>
-              <div class="checkbox-group">
-                <label class="checkbox-label"><input type="checkbox" name="contact" value="phone" /> Phone call</label>
-                <label class="checkbox-label"><input type="checkbox" name="contact" value="email" /> Email</label>
-                <label class="checkbox-label"><input type="checkbox" name="contact" value="whatsapp" /> WhatsApp</label>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Upload Images (optional)</label>
-              <div class="file-upload-area" onclick="document.getElementById('fileInput').click()">
-                <input type="file" id="fileInput" name="images" multiple accept="image/*" style="display:none" onchange="showFileNames(this)" />
-                <div class="file-upload-inner">
-                  <span class="file-icon">📎</span>
-                  <p>Click to upload photos of the area</p>
-                  <small>JPG, PNG, HEIC up to 10MB each</small>
-                </div>
-                <div id="fileNames" class="file-names"></div>
-              </div>
-            </div>
-
-            <div class="form-reassurance">
-              <span>🔒 Your information is kept strictly private and never shared with third parties.</span>
-            </div>
-
-            <button type="submit" class="btn btn-gold full-width large-btn">Submit Quotation Request</button>
-          </form>
-
-          <div id="quoteSuccess" class="quote-success hidden">
-            <div class="success-icon">✅</div>
-            <h2>Thank You!</h2>
-            <p>Your quotation request has been received. We'll be in touch within 24 hours to arrange your free site visit.</p>
-            <button class="btn btn-dark mt-lg" onclick="showPage('home')">Back to Home</button>
-          </div>
-
-        </div>
-        <div class="quote-sidebar reveal">
-          <div class="sidebar-card">
-            <h3>What Happens Next?</h3>
-            <ol class="next-steps">
-              <li><strong>We receive your request</strong> — within minutes</li>
-              <li><strong>We call you</strong> — within 24 hours</li>
-              <li><strong>Free site visit</strong> — at your convenience</li>
-              <li><strong>Detailed quotation</strong> — within 5 working days</li>
-            </ol>
-          </div>
-          <div class="sidebar-card">
-            <h3>Contact Us Directly</h3>
-            <div class="sidebar-contact">
-              <a href="tel:+353XXXXXXXXX">📞 +353 XX XXX XXXX</a>
-              <a href="mailto:info@companyname.ie">✉️ info@companyname.ie</a>
-              <p>🕐 Mon–Fri: 8am–6pm<br/>Sat: 9am–2pm</p>
-            </div>
-          </div>
-          <div class="sidebar-card trust-sidebar">
-            <h3>Why Request a Quote?</h3>
-            <ul>
-              <li>✅ 100% free, no obligation</li>
-              <li>✅ Detailed written breakdown</li>
-              <li>✅ No hidden costs</li>
-              <li>✅ Free site visit included</li>
-              <li>✅ Response within 24 hours</li>
-              <li>✅ Fully insured company</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</div><!-- /page-quote -->
-
-<!-- ===================== FAQ PAGE ===================== -->
-<div id="page-faq" class="page">
-
-  <section class="page-hero bg-dark">
-    <div class="container text-center">
-      <p class="section-eyebrow light reveal">Got Questions?</p>
-      <h1 class="section-title light reveal">Frequently Asked Questions</h1>
-      <p class="section-subtitle light reveal">Answers to the most common questions we receive from homeowners.</p>
-    </div>
-  </section>
-
-  <section class="section bg-warm">
-    <div class="container faq-container">
-
-      <div class="faq-group reveal">
-        <h3 class="faq-group-title">Quotations &amp; Pricing</h3>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            Is the initial consultation and quotation really free? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>Yes, completely free and with no obligation. We visit your property, assess the scope of work, and provide a detailed written quotation — all at no cost to you. We believe you should know exactly what you're paying for before making any commitment.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            How long does it take to receive a quotation? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>Following our site visit, you'll receive a detailed written quotation within 5 working days. For smaller jobs, we can often provide this within 48 hours.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            Are there hidden costs not included in the quote? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>Never. Our quotations are fully detailed and transparent. We list every element of the work and every material included. If additional work is discovered during a project, we always discuss and agree it with you in writing before proceeding — there are no surprises.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            What payment terms do you offer? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>We typically work on a stage-payment basis, where payments are tied to project milestones. This protects you as a client and ensures you only pay for work that has been completed to your satisfaction. Full payment terms are outlined in your written contract before any work begins.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-group reveal">
-        <h3 class="faq-group-title">Project &amp; Timeline</h3>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            How long will my project take? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>Timelines vary greatly depending on the scope of work. A bathroom renovation typically takes 1–2 weeks. A kitchen renovation 2–4 weeks. A full house renovation can take 3–6 months. We provide a detailed project schedule before work begins and keep you updated throughout.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            Do I need to move out during renovation? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>This depends on the scope of your project. For partial renovations (kitchen or bathroom only), most clients stay in the property. For full-house renovations, we recommend temporary alternative arrangements for the main construction phase. We always discuss this with you at the planning stage.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            How do you manage dust and mess during construction? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>We take the cleanliness of your home seriously. We use dust sheeting throughout, clean up at the end of every working day, and properly segregate waste. All skips and waste materials are managed and disposed of responsibly.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-group reveal">
-        <h3 class="faq-group-title">Insurance &amp; Guarantees</h3>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            Are you fully insured? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>Yes. We carry full public liability insurance (€6.5m) and employer's liability insurance. Certificates can be provided on request. All subcontractors we use are also vetted for appropriate insurance.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            Do you offer a workmanship guarantee? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>Yes. All completed work carries a 12-month workmanship guarantee. If any issue arises from our work within this period, we return to rectify it at no additional charge — promptly and professionally.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            Are your electricians and plumbers certified? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>Absolutely. Our electricians are RECI registered and our plumbers are RGII certified. All electrical and gas works are fully certified and appropriate certification documents are provided upon completion.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-group reveal">
-        <h3 class="faq-group-title">Planning &amp; Permissions</h3>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            Do I need planning permission for my project? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>It depends on the nature of the work. Many extensions and renovations fall under Exempted Development in Ireland and don't require planning permission, but this is assessed on a case-by-case basis. We'll advise you clearly at the site visit stage and can refer you to trusted architects where planning is required.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            Can you help with architectural drawings and planning? <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            <p>While we're a construction company rather than an architectural practice, we work closely with a network of trusted architects and engineers who can assist with designs, structural calculations, and planning applications. We can facilitate the entire process for you.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center mt-xl reveal">
-        <p class="body-text">Still have a question?</p>
-        <button class="btn btn-gold mt-lg" onclick="showPage('contact')">Contact Us</button>
-      </div>
-
-    </div>
-  </section>
-
-</div><!-- /page-faq -->
-
-<!-- ===================== CONTACT PAGE ===================== -->
-<div id="page-contact" class="page">
-
-  <section class="page-hero bg-dark">
-    <div class="container text-center">
-      <p class="section-eyebrow light reveal">Get in Touch</p>
-      <h1 class="section-title light reveal">Contact Us</h1>
-      <p class="section-subtitle light reveal">We'd love to hear about your project. Get in touch today.</p>
-    </div>
-  </section>
-
-  <section class="section bg-warm">
-    <div class="container">
-      <div class="contact-full-layout">
-
-        <div class="contact-details-col reveal">
-          <h2>Let's Talk</h2>
-          <p class="body-text">Whether you have a specific project in mind or just want to explore your options, we're always happy to chat. Give us a call, send us an email, or fill in the form and we'll get back to you within 24 hours.</p>
-
-          <div class="contact-detail-item">
-            <div class="cdi-icon">📞</div>
-            <div>
-              <strong>Phone</strong>
-              <a href="tel:+353XXXXXXXXX">+353 XX XXX XXXX</a>
-              <small>Mon–Fri: 8am–6pm, Sat: 9am–2pm</small>
-            </div>
-          </div>
-
-          <div class="contact-detail-item">
-            <div class="cdi-icon">✉️</div>
-            <div>
-              <strong>Email</strong>
-              <a href="mailto:info@companyname.ie">info@companyname.ie</a>
-              <small>We respond within 24 hours</small>
-            </div>
-          </div>
-
-          <div class="contact-detail-item">
-            <div class="cdi-icon">📍</div>
-            <div>
-              <strong>Office Address</strong>
-              <span>123 Business Street</span>
-              <span>Dublin, D00 XXXX</span>
-              <span>Ireland</span>
-            </div>
-          </div>
-
-          <div class="contact-detail-item">
-            <div class="cdi-icon">🕐</div>
-            <div>
-              <strong>Business Hours</strong>
-              <span>Monday – Friday: 8:00am – 6:00pm</span>
-              <span>Saturday: 9:00am – 2:00pm</span>
-              <span>Sunday: Closed</span>
-            </div>
-          </div>
-
-          <div class="social-links">
-            <strong>Follow Us</strong>
-            <div class="social-icons">
-              <a href="#" class="social-btn">Facebook</a>
-              <a href="#" class="social-btn">Instagram</a>
-              <a href="#" class="social-btn">Houzz</a>
-            </div>
-          </div>
-
-          <div class="areas-covered">
-            <strong>Areas We Cover</strong>
-            <div class="areas-tags">
-              <span>Dublin 1–24</span><span>Wicklow</span><span>Kildare</span>
-              <span>Meath</span><span>Louth</span><span>Nationwide (selected projects)</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-form-col reveal">
-          <form class="contact-form" onsubmit="handleContact(event)">
-            <h3>Send Us a Message</h3>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Your Name *</label>
-                <input type="text" placeholder="John Smith" required />
-              </div>
-              <div class="form-group">
-                <label>Phone Number</label>
-                <input type="tel" placeholder="+353 XX XXX XXXX" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Email Address *</label>
-              <input type="email" placeholder="john@example.com" required />
-            </div>
-            <div class="form-group">
-              <label>Subject</label>
-              <input type="text" placeholder="e.g. Kitchen Renovation Enquiry" />
-            </div>
-            <div class="form-group">
-              <label>Your Message *</label>
-              <textarea rows="6" placeholder="Tell us about your project or ask any questions..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-gold full-width">Send Message</button>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="map-section">
-    <div class="map-placeholder">
-      <div class="map-overlay-text">
-        <span>📍 Map Placeholder — Embed Google Maps here</span>
-        <small>Replace this with your Google Maps embed code</small>
-      </div>
-    </div>
-  </section>
-
-</div><!-- /page-contact -->
-
-<!-- ===================== FOOTER ===================== -->
 <footer class="site-footer">
-  <div class="footer-top">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <div class="logo-mark">C</div>
-            <div class="logo-text">
-              <span class="logo-name">COMPANY NAME</span>
-              <span class="logo-tagline">Residential Construction</span>
-            </div>
-          </div>
-          <p>Family-run residential construction and renovation specialists serving Dublin and surrounding areas since 2009.</p>
-          <div class="footer-trust-badges">
-            <span>🛡️ Fully Insured</span>
-            <span>✅ RECI Registered</span>
-            <span>✅ RGII Certified</span>
-          </div>
-        </div>
-        <div class="footer-links-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#" onclick="showPage('home')">Home</a></li>
-            <li><a href="#" onclick="showPage('about')">About Us</a></li>
-            <li><a href="#" onclick="showPage('services')">Services</a></li>
-            <li><a href="#" onclick="showPage('projects')">Projects</a></li>
-            <li><a href="#" onclick="showPage('beforeafter')">Before &amp; After</a></li>
-          </ul>
-        </div>
-        <div class="footer-links-col">
-          <h4>More</h4>
-          <ul>
-            <li><a href="#" onclick="showPage('testimonials')">Testimonials</a></li>
-            <li><a href="#" onclick="showPage('faq')">FAQ</a></li>
-            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
-            <li><a href="#" onclick="showPage('quote')">Get a Quote</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact-col">
-          <h4>Contact</h4>
-          <div class="footer-contact-item"><a href="tel:+353XXXXXXXXX">📞 +353 XX XXX XXXX</a></div>
-          <div class="footer-contact-item"><a href="mailto:info@companyname.ie">✉️ info@companyname.ie</a></div>
-          <div class="footer-contact-item">📍 123 Business Street, Dublin</div>
-          <div class="footer-contact-item">🕐 Mon–Fri: 8am–6pm</div>
-          <div class="footer-social">
-            <a href="#" class="fsocial">f</a>
-            <a href="#" class="fsocial">in</a>
-            <a href="#" class="fsocial">ig</a>
-          </div>
-        </div>
-      </div>
+  <div class="footer-top"><div class="container"><div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo"><div class="logo-mark">C</div><div class="logo-text"><span class="logo-name">COMPANY NAME</span><span class="logo-tagline">Residential Construction</span></div></div>
+      <p>Family-run residential construction and renovation specialists serving Dublin and surrounding areas since 2009.</p>
+      <div class="footer-trust-badges"><span>🛡️ Fully Insured</span><span>✅ RECI Registered</span><span>✅ RGII Certified</span></div>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="container">
-      <p>&copy; 2025 COMPANY NAME. All rights reserved. | Registered in Ireland | <a href="#">Privacy Policy</a> | <a href="#">Terms &amp; Conditions</a></p>
+    <div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="beforeafter.html">Before &amp; After</a></li></ul></div>
+    <div class="footer-links-col"><h4>More</h4><ul><li><a href="testimonials.html">Testimonials</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a href="quote.html">Get a Quote</a></li></ul></div>
+    <div class="footer-contact-col"><h4>Contact</h4>
+      <div class="footer-contact-item"><a href="tel:+353XXXXXXXXX">📞 +353 XX XXX XXXX</a></div>
+      <div class="footer-contact-item"><a href="mailto:info@companyname.ie">✉️ info@companyname.ie</a></div>
+      <div class="footer-contact-item">📍 123 Business Street, Dublin</div>
+      <div class="footer-contact-item">🕐 Mon–Fri: 8am–6pm</div>
+      <div class="footer-social"><a href="#" class="fsocial">f</a><a href="#" class="fsocial">in</a><a href="#" class="fsocial">ig</a></div>
     </div>
-  </div>
+  </div></div></div>
+  <div class="footer-bottom"><div class="container"><p>&copy; 2025 COMPANY NAME. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms &amp; Conditions</a></p></div></div>
 </footer>
 
-<!-- Toast notification -->
-<div id="toast" class="toast hidden"></div>
-
-<link rel="stylesheet" href="styles.css" />
-<script src="app.js"></script>
-
-<!-- ===================== CHATBOT ===================== -->
 <div id="chatbot">
-
-  <!-- Bubble button -->
   <button id="chatToggle" onclick="toggleChat()" aria-label="Open chat">
-    <span id="chatOpenIcon">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-      </svg>
-    </span>
-    <span id="chatCloseIcon" class="hidden">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-      </svg>
-    </span>
+    <span id="chatOpenIcon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+    <span id="chatCloseIcon" class="hidden"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
     <span id="chatUnread" class="chat-unread hidden">1</span>
   </button>
-
-  <!-- Chat window -->
   <div id="chatWindow" class="chat-window hidden">
-    <div class="chat-header">
-      <div class="chat-header-avatar">C</div>
-      <div class="chat-header-info">
-        <strong>COMPANY NAME</strong>
-        <span><span class="chat-online-dot"></span> Online — usually replies instantly</span>
-      </div>
-      <button class="chat-close-btn" onclick="toggleChat()">✕</button>
-    </div>
-
-    <div class="chat-messages" id="chatMessages">
-      <!-- messages injected by JS -->
-    </div>
-
+    <div class="chat-header"><div class="chat-header-avatar">C</div><div class="chat-header-info"><strong>COMPANY NAME</strong><span><span class="chat-online-dot"></span> Online — usually replies instantly</span></div><button class="chat-close-btn" onclick="toggleChat()">✕</button></div>
+    <div class="chat-messages" id="chatMessages"></div>
     <div class="chat-quick-replies" id="quickReplies"></div>
-
-    <div class="chat-input-row">
-      <input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off" onkeydown="if(event.key==='Enter') sendUserMessage()" />
-      <button onclick="sendUserMessage()" class="chat-send-btn" aria-label="Send">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-        </svg>
-      </button>
-    </div>
+    <div class="chat-input-row"><input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off" onkeydown="if(event.key==='Enter') sendUserMessage()" /><button onclick="sendUserMessage()" class="chat-send-btn" aria-label="Send"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button></div>
   </div>
-
-</div><!-- /chatbot -->
-
+</div>
+<div id="toast" class="toast hidden"></div>
+<script src="app.js"></script>
 <script src="chatbot.js"></script>
 </body>
 </html>

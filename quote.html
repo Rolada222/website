@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Request a free no-obligation construction quotation"/>
+  <title>Get a Free Quote — COMPANY NAME</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head><body>
+
+<div id="navBackdrop"></div>
+<nav id="navbar"><div class="nav-container">
+  <a href="index.html" class="nav-logo"><div class="logo-mark">C</div><div class="logo-text"><span class="logo-name">COMPANY NAME</span><span class="logo-tagline">Residential Construction</span></div></a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links nav-desktop">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="beforeafter.html">Before &amp; After</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a href="quote.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</div></nav>
+<ul class="nav-links nav-mobile" id="navLinks">
+  <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="beforeafter.html">Before &amp; After</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a href="quote.html" class="nav-cta">Get a Quote</a></li>
+</ul>
+
+<main>
+
+  <section class="page-hero bg-dark">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-eyebrow">Free &amp; No Obligation</span>
+        <h1 class="section-title">Get a Free Quote</h1>
+        <p class="section-subtitle">Tell us about your project and we'll get back to you within 24 hours with a detailed, transparent quotation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-warm">
+    <div class="container">
+      <div class="quote-layout">
+
+        <!-- Form Column -->
+        <div class="quote-form-wrap reveal">
+          <h2>Project Quotation Request</h2>
+          <p class="form-intro">Fill in the details below and one of our team will be in touch to discuss your project and arrange a site visit if needed. All enquiries are treated confidentially.</p>
+
+          <div id="quoteSuccess" class="hidden">
+            <div class="success-message">
+              <div class="success-icon">✅</div>
+              <h3>Thank You — Request Received!</h3>
+              <p>We've received your quotation request and will be in touch within 24 hours. If your project is urgent, please call us directly on <a href="tel:+353XXXXXXXXX">+353 XX XXX XXXX</a>.</p>
+              <a href="index.html" class="btn btn-gold mt-lg">Back to Home</a>
+            </div>
+          </div>
+
+          <form id="quoteForm" onsubmit="handleQuoteSubmit(event)" novalidate>
+
+            <div class="form-section-title">Personal Details</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name <span class="req">*</span></label>
+                <input type="text" id="fullName" name="fullName" placeholder="Your full name" required/>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number <span class="req">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="+353 XX XXX XXXX" required/>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address <span class="req">*</span></label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required/>
+              </div>
+              <div class="form-group">
+                <label for="address">Property Address</label>
+                <input type="text" id="address" name="address" placeholder="Street, Dublin"/>
+              </div>
+            </div>
+
+            <div class="form-section-title">Project Details</div>
+
+            <div class="form-group">
+              <label for="projectType">Type of Project <span class="req">*</span></label>
+              <select id="projectType" name="projectType" required>
+                <option value="" disabled selected>Select a service...</option>
+                <option value="residential-construction">Residential Construction</option>
+                <option value="home-renovation">Home Renovation</option>
+                <option value="house-extension">House Extension</option>
+                <option value="attic-conversion">Attic Conversion</option>
+                <option value="bathroom-renovation">Bathroom Renovation</option>
+                <option value="kitchen-renovation">Kitchen Renovation</option>
+                <option value="painting-decorating">Painting &amp; Decorating</option>
+                <option value="plumbing">Plumbing Works</option>
+                <option value="electrical">Electrical Works</option>
+                <option value="repairs-maintenance">Repairs &amp; Maintenance</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="budget">Approximate Budget</label>
+                <select id="budget" name="budget">
+                  <option value="" disabled selected>Select a range...</option>
+                  <option value="under-5k">Under €5,000</option>
+                  <option value="5k-15k">€5,000 – €15,000</option>
+                  <option value="15k-30k">€15,000 – €30,000</option>
+                  <option value="30k-60k">€30,000 – €60,000</option>
+                  <option value="60k-100k">€60,000 – €100,000</option>
+                  <option value="100k-plus">€100,000+</option>
+                  <option value="unsure">Not sure yet</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="startDate">Preferred Start Date</label>
+                <input type="date" id="startDate" name="startDate"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Project Description <span class="req">*</span></label>
+              <textarea id="description" name="description" rows="5" placeholder="Please describe your project in as much detail as possible — what needs doing, the size of the space, any specific requirements or materials you have in mind..." required></textarea>
+            </div>
+
+            <div class="form-section-title">Preferences</div>
+
+            <div class="form-group">
+              <label>Preferred Contact Method</label>
+              <div class="checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="contactMethod" value="phone"/>
+                  <span>Phone Call</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="contactMethod" value="email" checked/>
+                  <span>Email</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="contactMethod" value="whatsapp"/>
+                  <span>WhatsApp</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Attach Photos or Plans <span class="form-optional">(optional)</span></label>
+              <div class="file-upload-area" onclick="document.getElementById('fileInput').click()">
+                <div class="file-upload-icon">📎</div>
+                <div class="file-upload-text">
+                  <strong>Click to upload files</strong>
+                  <span>or drag and drop</span>
+                  <small>JPG, PNG, PDF up to 10MB each</small>
+                </div>
+                <input type="file" id="fileInput" name="files" multiple accept=".jpg,.jpeg,.png,.pdf,.heic" style="display:none" onchange="showFileNames(this)"/>
+              </div>
+              <div id="fileNameList" class="file-name-list"></div>
+            </div>
+
+            <div class="form-reassurance">
+              <span>🔒 Your details are kept private and never shared with third parties.</span>
+              <span>✅ No obligation — a quote is just a quote.</span>
+              <span>⚡ We respond within 24 hours.</span>
+            </div>
+
+            <button type="submit" class="btn btn-gold mt-lg">Submit Quotation Request</button>
+
+          </form>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="quote-sidebar">
+
+          <div class="sidebar-card reveal">
+            <h4>What Happens Next?</h4>
+            <ol class="next-steps">
+              <li>
+                <strong>We review your request</strong>
+                <span>Our team will read through your project details within a few hours of receiving your form.</span>
+              </li>
+              <li>
+                <strong>We contact you</strong>
+                <span>A member of our team will call or email you within 24 hours to discuss your project and answer any initial questions.</span>
+              </li>
+              <li>
+                <strong>Site visit</strong>
+                <span>For most projects we'll arrange a convenient time to visit the property and assess the work in person — completely free.</span>
+              </li>
+              <li>
+                <strong>Detailed written quote</strong>
+                <span>You receive a clear, itemised written quotation with no hidden extras. We'll talk you through everything before you decide.</span>
+              </li>
+            </ol>
+          </div>
+
+          <div class="sidebar-card reveal">
+            <h4>Contact Us Directly</h4>
+            <div class="sidebar-contact-item">
+              <span class="sci-icon">📞</span>
+              <div>
+                <strong>Phone</strong>
+                <a href="tel:+353XXXXXXXXX">+353 XX XXX XXXX</a>
+              </div>
+            </div>
+            <div class="sidebar-contact-item">
+              <span class="sci-icon">✉️</span>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:info@companyname.ie">info@companyname.ie</a>
+              </div>
+            </div>
+            <div class="sidebar-contact-item">
+              <span class="sci-icon">🕐</span>
+              <div>
+                <strong>Office Hours</strong>
+                <span>Mon–Fri: 8am – 6pm</span>
+                <span>Saturday: 9am – 1pm</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-card reveal">
+            <h4>Why Request a Quote?</h4>
+            <ul class="sidebar-checklist">
+              <li>100% free, no obligation</li>
+              <li>Detailed, itemised pricing</li>
+              <li>No surprise costs or hidden extras</li>
+              <li>Friendly, pressure-free process</li>
+              <li>Over 15 years of trusted experience</li>
+              <li>Fully insured, certified tradespeople</li>
+            </ul>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer"><div class="footer-top"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-logo"><div class="logo-mark">C</div><div class="logo-text"><span class="logo-name">COMPANY NAME</span><span class="logo-tagline">Residential Construction</span></div></div><p>Family-run residential construction specialists serving Dublin since 2009.</p><div class="footer-trust-badges"><span>🛡️ Fully Insured</span><span>✅ RECI Registered</span><span>✅ RGII Certified</span></div></div><div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="beforeafter.html">Before &amp; After</a></li></ul></div><div class="footer-links-col"><h4>More</h4><ul><li><a href="testimonials.html">Testimonials</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a href="quote.html">Get a Quote</a></li></ul></div><div class="footer-contact-col"><h4>Contact</h4><div class="footer-contact-item"><a href="tel:+353XXXXXXXXX">📞 +353 XX XXX XXXX</a></div><div class="footer-contact-item"><a href="mailto:info@companyname.ie">✉️ info@companyname.ie</a></div><div class="footer-contact-item">📍 123 Business Street, Dublin</div><div class="footer-social"><a href="#" class="fsocial">f</a><a href="#" class="fsocial">in</a><a href="#" class="fsocial">ig</a></div></div></div></div></div><div class="footer-bottom"><div class="container"><p>&copy; 2025 COMPANY NAME. All rights reserved.</p></div></div></footer>
+
+<div id="chatbot"><button id="chatToggle" onclick="toggleChat()" aria-label="Open chat"><span id="chatOpenIcon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span id="chatCloseIcon" class="hidden"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span id="chatUnread" class="chat-unread hidden">1</span></button><div id="chatWindow" class="chat-window hidden"><div class="chat-header"><div class="chat-header-avatar">C</div><div class="chat-header-info"><strong>COMPANY NAME</strong><span><span class="chat-online-dot"></span> Online</span></div><button class="chat-close-btn" onclick="toggleChat()">✕</button></div><div class="chat-messages" id="chatMessages"></div><div class="chat-quick-replies" id="quickReplies"></div><div class="chat-input-row"><input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off" onkeydown="if(event.key==='Enter') sendUserMessage()"/><button onclick="sendUserMessage()" class="chat-send-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button></div></div></div>
+<div id="toast" class="toast hidden"></div>
+<script src="app.js"></script><script src="chatbot.js"></script>
+
+</body></html>

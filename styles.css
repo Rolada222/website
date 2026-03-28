@@ -201,8 +201,7 @@ p { line-height: 1.8; }
 /* ===================================================
    PAGES
    =================================================== */
-.page { display: none; padding-top: var(--nav-h); }
-.page.active { display: block; }
+main { padding-top: var(--nav-h); min-height: 80vh; }
 
 .page-hero {
   padding: 80px 0 64px;

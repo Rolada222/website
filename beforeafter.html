@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Real before and after renovation photos with interactive comparison sliders"/>
+  <title>Before &amp; After — COMPANY NAME</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head><body>
+
+<div id="navBackdrop"></div>
+<nav id="navbar"><div class="nav-container">
+  <a href="index.html" class="nav-logo"><div class="logo-mark">C</div><div class="logo-text"><span class="logo-name">COMPANY NAME</span><span class="logo-tagline">Residential Construction</span></div></a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links nav-desktop">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="beforeafter.html">Before &amp; After</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a href="quote.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</div></nav>
+<ul class="nav-links nav-mobile" id="navLinks">
+  <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="beforeafter.html">Before &amp; After</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a href="quote.html" class="nav-cta">Get a Quote</a></li>
+</ul>
+
+<main>
+
+  <section class="page-hero bg-dark">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-eyebrow">See the Difference</span>
+        <h1 class="section-title">Before &amp; After</h1>
+        <p class="section-subtitle">Drag the slider on each comparison to reveal the transformation. Real projects, real results.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-warm">
+    <div class="container">
+
+      <!-- Item 1: Kitchen Rathmines -->
+      <div class="ba-full-item reveal">
+        <div class="ba-item-label">
+          <span class="ba-project-tag">Kitchen Renovation</span>
+          <h3>Complete Kitchen Transformation</h3>
+          <p>A tired, outdated 1990s kitchen in Rathmines was stripped back to bare walls and rebuilt from scratch. New layout, quartz worktops, integrated appliances, and underfloor heating delivered a complete transformation in just 5 weeks.</p>
+        </div>
+        <div class="ba-slider-container" id="slider1">
+          <div class="ba-slider">
+            <div class="ba-before">
+              <div class="ba-placeholder before-ph">
+                <span class="ba-ph-label">BEFORE</span>
+                <span class="ba-ph-caption">Rathmines Kitchen — Original 1990s fit-out</span>
+              </div>
+            </div>
+            <div class="ba-after">
+              <div class="ba-placeholder after-ph">
+                <span class="ba-ph-label">AFTER</span>
+                <span class="ba-ph-caption">Rathmines Kitchen — Newly renovated, 2024</span>
+              </div>
+            </div>
+            <div class="ba-handle" id="handle1">
+              <div class="ba-handle-line"></div>
+              <div class="ba-handle-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l-7 7 7 7M16 5l7 7-7 7"/></svg>
+              </div>
+              <div class="ba-handle-line"></div>
+            </div>
+          </div>
+          <div class="ba-labels">
+            <span class="ba-label-before">Before</span>
+            <span class="ba-label-after">After</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: Bathroom Clontarf -->
+      <div class="ba-full-item reveal">
+        <div class="ba-item-label">
+          <span class="ba-project-tag">Bathroom Renovation</span>
+          <h3>En-Suite Wet Room Conversion</h3>
+          <p>A cramped, mould-prone en-suite in Clontarf was transformed into a sleek, spacious wet room. Full waterproofing, large-format marble tiles, a linear drain, and a bespoke vanity unit turned a problem room into a luxury space.</p>
+        </div>
+        <div class="ba-slider-container" id="slider2">
+          <div class="ba-slider">
+            <div class="ba-before">
+              <div class="ba-placeholder before-ph">
+                <span class="ba-ph-label">BEFORE</span>
+                <span class="ba-ph-caption">Clontarf En-Suite — Original condition</span>
+              </div>
+            </div>
+            <div class="ba-after">
+              <div class="ba-placeholder after-ph">
+                <span class="ba-ph-label">AFTER</span>
+                <span class="ba-ph-caption">Clontarf En-Suite — Luxury wet room, 2024</span>
+              </div>
+            </div>
+            <div class="ba-handle" id="handle2">
+              <div class="ba-handle-line"></div>
+              <div class="ba-handle-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l-7 7 7 7M16 5l7 7-7 7"/></svg>
+              </div>
+              <div class="ba-handle-line"></div>
+            </div>
+          </div>
+          <div class="ba-labels">
+            <span class="ba-label-before">Before</span>
+            <span class="ba-label-after">After</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: Living Room Rathgar -->
+      <div class="ba-full-item reveal">
+        <div class="ba-item-label">
+          <span class="ba-project-tag">Interior Renovation</span>
+          <h3>Victorian Living Room Restoration</h3>
+          <p>The front reception room of a Victorian terrace in Rathgar was stripped, replastered, and restored to its former glory. Cornicing was repaired, the original fireplace was reinstated, and a heritage colour palette was applied throughout.</p>
+        </div>
+        <div class="ba-slider-container" id="slider3">
+          <div class="ba-slider">
+            <div class="ba-before">
+              <div class="ba-placeholder before-ph">
+                <span class="ba-ph-label">BEFORE</span>
+                <span class="ba-ph-caption">Rathgar Living Room — Before renovation</span>
+              </div>
+            </div>
+            <div class="ba-after">
+              <div class="ba-placeholder after-ph">
+                <span class="ba-ph-label">AFTER</span>
+                <span class="ba-ph-caption">Rathgar Living Room — Restored &amp; decorated</span>
+              </div>
+            </div>
+            <div class="ba-handle" id="handle3">
+              <div class="ba-handle-line"></div>
+              <div class="ba-handle-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l-7 7 7 7M16 5l7 7-7 7"/></svg>
+              </div>
+              <div class="ba-handle-line"></div>
+            </div>
+          </div>
+          <div class="ba-labels">
+            <span class="ba-label-before">Before</span>
+            <span class="ba-label-after">After</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4: Exterior Terenure -->
+      <div class="ba-full-item reveal">
+        <div class="ba-item-label">
+          <span class="ba-project-tag">Exterior Painting</span>
+          <h3>Full Exterior Repaint &amp; Render Repair</h3>
+          <p>A large detached home in Terenure suffering from cracked render and faded masonry was fully restored. Crack repairs, repointing, masonry preparation and two coats of premium paint gave the home a completely fresh appearance.</p>
+        </div>
+        <div class="ba-slider-container" id="slider4">
+          <div class="ba-slider">
+            <div class="ba-before">
+              <div class="ba-placeholder before-ph">
+                <span class="ba-ph-label">BEFORE</span>
+                <span class="ba-ph-caption">Terenure Exterior — Faded &amp; cracked render</span>
+              </div>
+            </div>
+            <div class="ba-after">
+              <div class="ba-placeholder after-ph">
+                <span class="ba-ph-label">AFTER</span>
+                <span class="ba-ph-caption">Terenure Exterior — Freshly painted, 2024</span>
+              </div>
+            </div>
+            <div class="ba-handle" id="handle4">
+              <div class="ba-handle-line"></div>
+              <div class="ba-handle-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l-7 7 7 7M16 5l7 7-7 7"/></svg>
+              </div>
+              <div class="ba-handle-line"></div>
+            </div>
+          </div>
+          <div class="ba-labels">
+            <span class="ba-label-before">Before</span>
+            <span class="ba-label-after">After</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section cta-banner bg-dark">
+    <div class="container text-center">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Your Transformation Awaits</span>
+        <h2 class="section-title">Ready to See What We Can Do For Your Home?</h2>
+        <p class="section-subtitle">Every transformation starts with a conversation. Get in touch for a free, no-obligation quote and let's plan your project together.</p>
+        <a href="quote.html" class="btn btn-gold mt-lg">Get a Free Quote</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer"><div class="footer-top"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-logo"><div class="logo-mark">C</div><div class="logo-text"><span class="logo-name">COMPANY NAME</span><span class="logo-tagline">Residential Construction</span></div></div><p>Family-run residential construction specialists serving Dublin since 2009.</p><div class="footer-trust-badges"><span>🛡️ Fully Insured</span><span>✅ RECI Registered</span><span>✅ RGII Certified</span></div></div><div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="beforeafter.html">Before &amp; After</a></li></ul></div><div class="footer-links-col"><h4>More</h4><ul><li><a href="testimonials.html">Testimonials</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a href="quote.html">Get a Quote</a></li></ul></div><div class="footer-contact-col"><h4>Contact</h4><div class="footer-contact-item"><a href="tel:+353XXXXXXXXX">📞 +353 XX XXX XXXX</a></div><div class="footer-contact-item"><a href="mailto:info@companyname.ie">✉️ info@companyname.ie</a></div><div class="footer-contact-item">📍 123 Business Street, Dublin</div><div class="footer-social"><a href="#" class="fsocial">f</a><a href="#" class="fsocial">in</a><a href="#" class="fsocial">ig</a></div></div></div></div></div><div class="footer-bottom"><div class="container"><p>&copy; 2025 COMPANY NAME. All rights reserved.</p></div></div></footer>
+
+<div id="chatbot"><button id="chatToggle" onclick="toggleChat()" aria-label="Open chat"><span id="chatOpenIcon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span id="chatCloseIcon" class="hidden"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span id="chatUnread" class="chat-unread hidden">1</span></button><div id="chatWindow" class="chat-window hidden"><div class="chat-header"><div class="chat-header-avatar">C</div><div class="chat-header-info"><strong>COMPANY NAME</strong><span><span class="chat-online-dot"></span> Online</span></div><button class="chat-close-btn" onclick="toggleChat()">✕</button></div><div class="chat-messages" id="chatMessages"></div><div class="chat-quick-replies" id="quickReplies"></div><div class="chat-input-row"><input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off" onkeydown="if(event.key==='Enter') sendUserMessage()"/><button onclick="sendUserMessage()" class="chat-send-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button></div></div></div>
+<div id="toast" class="toast hidden"></div>
+<script src="app.js"></script><script src="chatbot.js"></script>
+
+</body></html>

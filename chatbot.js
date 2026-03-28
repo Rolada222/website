@@ -51,7 +51,7 @@ const KB = [
   {
     id: 'quote',
     patterns: [['quote','quotation','estimate','free quote','get a quote','request a quote']],
-    reply: () => `Great news — all our quotations are <strong>100% free and with no obligation</strong>. 🏗️<br><br>Here's how it works:<br><ol style="padding-left:16px;margin-top:8px"><li>You fill in our <a href="#" onclick="showPage('quote');toggleChat()">online quote form</a> or call us</li><li>We arrange a <strong>free site visit</strong> at your convenience</li><li>You receive a detailed written quotation within <strong>5 working days</strong></li></ol><br>No hidden costs. No pressure. Just an honest breakdown of your project.`,
+    reply: () => `Great news — all our quotations are <strong>100% free and with no obligation</strong>. 🏗️<br><br>Here's how it works:<br><ol style="padding-left:16px;margin-top:8px"><li>You fill in our <a href="#" onclick="location.href='quote.html'">online quote form</a> or call us</li><li>We arrange a <strong>free site visit</strong> at your convenience</li><li>You receive a detailed written quotation within <strong>5 working days</strong></li></ol><br>No hidden costs. No pressure. Just an honest breakdown of your project.`,
     quick: ['Fill in quote form','Leave my details here','Call you directly','What info do you need?','How long does a quote take?'],
   },
   {
@@ -481,7 +481,7 @@ function handleLead(text) {
   if (STATE.awaitLead === 'project') {
     STATE.leadStage = 4;
     STATE.awaitLead = null;
-    postBot(`Brilliant, ${STATE.userName}! 🎉 We have everything we need.<br><br>Our team will be in touch within <strong>24 hours</strong> to arrange your free site visit and quotation.<br><br>In the meantime, feel free to browse our <a href="#" onclick="showPage('projects');toggleChat()">completed projects</a> or <a href="#" onclick="showPage('beforeafter');toggleChat()">before &amp; after gallery</a> for inspiration!`, ['View projects','Before & after','Our services']);
+    postBot(`Brilliant, ${STATE.userName}! 🎉 We have everything we need.<br><br>Our team will be in touch within <strong>24 hours</strong> to arrange your free site visit and quotation.<br><br>In the meantime, feel free to browse our <a href="#" onclick="location.href='projects.html'">completed projects</a> or <a href="#" onclick="location.href='beforeafter.html'">before &amp; after gallery</a> for inspiration!`, ['View projects','Before & after','Our services']);
     return true;
   }
   return false;
