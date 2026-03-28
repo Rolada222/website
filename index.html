@@ -26,7 +26,8 @@
     <button class="hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links" id="navLinks">
+    <!-- Desktop nav links stay here, shown via CSS on large screens -->
+    <ul class="nav-links nav-desktop" id="navLinksDesktop">
       <li><a href="#" onclick="showPage('home')" data-page="home">Home</a></li>
       <li><a href="#" onclick="showPage('about')" data-page="about">About Us</a></li>
       <li><a href="#" onclick="showPage('services')" data-page="services">Services</a></li>
@@ -39,6 +40,18 @@
     </ul>
   </div>
 </nav>
+<!-- Mobile nav OUTSIDE nav so backdrop-filter doesn't clip it -->
+<ul class="nav-links nav-mobile" id="navLinks">
+  <li><a href="#" onclick="showPage('home')" data-page="home">Home</a></li>
+  <li><a href="#" onclick="showPage('about')" data-page="about">About Us</a></li>
+  <li><a href="#" onclick="showPage('services')" data-page="services">Services</a></li>
+  <li><a href="#" onclick="showPage('projects')" data-page="projects">Projects</a></li>
+  <li><a href="#" onclick="showPage('beforeafter')" data-page="beforeafter">Before &amp; After</a></li>
+  <li><a href="#" onclick="showPage('testimonials')" data-page="testimonials">Testimonials</a></li>
+  <li><a href="#" onclick="showPage('faq')" data-page="faq">FAQ</a></li>
+  <li><a href="#" onclick="showPage('contact')" data-page="contact">Contact</a></li>
+  <li><a href="#" onclick="showPage('quote')" data-page="quote" class="nav-cta">Get a Quote</a></li>
+</ul>
 
 <!-- ===================== HOME PAGE ===================== -->
 <div id="page-home" class="page active">

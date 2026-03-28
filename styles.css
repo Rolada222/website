@@ -141,8 +141,27 @@ p { line-height: 1.8; }
 .logo-tagline { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); }
 
 .nav-links {
-  display: flex; align-items: center; gap: 4px; list-style: none;
+  list-style: none;
 }
+.nav-desktop {
+  display: flex; align-items: center; gap: 4px;
+}
+/* Mobile list hidden by default — lives outside <nav> so it is never clipped */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: var(--nav-h); left: 0; right: 0; bottom: 0;
+  height: calc(100dvh - var(--nav-h));
+  flex-direction: column;
+  background: rgba(17,17,17,0.99);
+  padding: 16px 12px;
+  gap: 4px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 999;
+  -webkit-overflow-scrolling: touch;
+}
+.nav-mobile.open { display: flex; }
 .nav-links a {
   display: block;
   padding: 8px 12px;
@@ -912,35 +931,30 @@ p { line-height: 1.8; }
 }
 
 @media (max-width: 900px) {
-  .nav-links {
-    display: none; flex-direction: column;
-    position: fixed; inset: var(--nav-h) 0 0 0;
-    background: rgba(17,17,17,0.98);
-    padding: 16px 12px; gap: 4px;
-    overflow-y: auto; overflow-x: hidden;
-    z-index: 999;
-    -webkit-overflow-scrolling: touch;
-  }
-  .nav-links.open { display: flex; }
-  .nav-links li { width: 100%; }
-  .nav-links a {
+  /* Hide desktop nav, show hamburger */
+  .nav-desktop { display: none !important; }
+  .hamburger   { display: flex; }
+  .hamburger span { pointer-events: none; }
+
+  /* Mobile nav link styles */
+  .nav-mobile li { width: 100%; }
+  .nav-mobile a {
     display: block; width: 100%;
-    padding: 16px 20px; font-size: 1rem;
+    padding: 16px 20px; font-size: 1.05rem;
     border-radius: var(--radius);
     color: rgba(255,255,255,0.85);
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+    transition: background 0.15s, color 0.15s;
   }
-  .nav-links a:hover,
-  .nav-links a:active { color: var(--gold); background: rgba(201,168,76,0.1); }
-  .nav-links .nav-cta {
+  .nav-mobile a:hover,
+  .nav-mobile a:active { color: var(--gold); background: rgba(201,168,76,0.1); }
+  .nav-mobile .nav-cta {
     margin: 12px 0 0 0;
-    text-align: center;
+    display: block; text-align: center;
     background: var(--gold); color: var(--dark) !important;
-    padding: 16px 20px;
+    padding: 16px 20px; border-radius: var(--radius);
   }
-  .hamburger { display: flex; }
-  .hamburger span { pointer-events: none; }
 
   .hero-content { padding: 0 16px; }
   .hero { min-height: 90vh; }

@@ -23,7 +23,7 @@ function showPage(name) {
     currentPage = name;
   }
 
-  // Update nav active state
+  // Update nav active state (both desktop and mobile lists)
   document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
     a.classList.toggle('active-link', a.dataset.page === name);
   });
