@@ -1,5 +1,5 @@
 /* ===================================================
-   COMPANY NAME — Advanced Chatbot v2
+   MTARISE CONSTRUCTION LTD — Advanced Chatbot v2
    chatbot.js — scored matching, context awareness,
    conversation memory, natural language handling
    =================================================== */
@@ -43,7 +43,7 @@ const KB = [
   {
     id: 'greeting',
     patterns: [['hello','hi','hey','howya','how are','hiya','sup','good morning','good afternoon','good evening','morning','evening','afternoon','greetings']],
-    reply: () => `${getGreeting()}${hi()}! 👋 Welcome to <strong>COMPANY NAME</strong>.<br><br>I'm your virtual assistant, here to answer any questions about our residential construction and renovation services — and help you get a free quote.<br><br>What can I help you with today?`,
+    reply: () => `${getGreeting()}${hi()}! 👋 Welcome to <strong>MTARISE CONSTRUCTION LTD</strong>.<br><br>I'm your virtual assistant, here to answer any questions about our residential construction and renovation services — and help you get a free quote.<br><br>What can I help you with today?`,
     quick: ['Get a free quote','Our services','Bathroom renovation','Kitchen renovation','House extension','Attic conversion','Pricing info','Contact details'],
   },
 
@@ -335,7 +335,7 @@ const KB = [
   {
     id: 'concern',
     patterns: [['worried','concern','nervous','bad experience','previous builder','problem','issue','trust','scared','nightmare','dodgy','cowboy']],
-    reply: () => `We completely understand${hi()} — bad experiences with builders are unfortunately common. Here's why COMPANY NAME is different:<br><br>✅ <strong>Fully insured</strong> — €6.5m public liability<br>✅ <strong>Written contract</strong> — everything agreed upfront<br>✅ <strong>Stage payments</strong> — you never pay in advance<br>✅ <strong>Dedicated project manager</strong> — one point of contact<br>✅ <strong>12-month guarantee</strong> — we stand behind our work<br>✅ <strong>120+ verified reviews</strong> — real clients, real results<br><br>We're happy to provide references from recent local projects if it would help build confidence.`,
+    reply: () => `We completely understand${hi()} — bad experiences with builders are unfortunately common. Here's why MTARISE CONSTRUCTION LTD is different:<br><br>✅ <strong>Fully insured</strong> — €6.5m public liability<br>✅ <strong>Written contract</strong> — everything agreed upfront<br>✅ <strong>Stage payments</strong> — you never pay in advance<br>✅ <strong>Dedicated project manager</strong> — one point of contact<br>✅ <strong>12-month guarantee</strong> — we stand behind our work<br>✅ <strong>120+ verified reviews</strong> — real clients, real results<br><br>We're happy to provide references from recent local projects if it would help build confidence.`,
     quick: ['Read our reviews','Our guarantee','Get a free quote','Contact details'],
   },
 
@@ -603,7 +603,7 @@ function processText(raw) {
 // ─── Greeting ─────────────────────────────────────────
 function greet() {
   addMessage(
-    `${getGreeting()}! 👋 Welcome to <strong>COMPANY NAME</strong>.<br>I'm here to answer your questions about our residential construction and renovation services — and help you get started with a <strong>free quote</strong>.<br><br>What can I help you with today?`,
+    `${getGreeting()}! 👋 Welcome to <strong>MTARISE CONSTRUCTION LTD</strong>.<br>I'm here to answer your questions about our residential construction and renovation services — and help you get started with a <strong>free quote</strong>.<br><br>What can I help you with today?`,
     'bot'
   );
   setTimeout(() => setQuickReplies(['Get a free quote','Our services','Bathroom renovation','Kitchen renovation','House extension','Attic conversion','Pricing info','Contact details']), 200);

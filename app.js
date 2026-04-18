@@ -1,5 +1,5 @@
 /* ===================================================
-   COMPANY NAME — app.js (multi-page version)
+   MTARISE CONSTRUCTION LTD — app.js (multi-page version)
    No routing needed — real HTML pages handle navigation
    =================================================== */
 'use strict';
