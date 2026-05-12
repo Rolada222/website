@@ -134,10 +134,45 @@ function filterProjects(btn, cat) {
 // ─── Forms ───────────────────────────────────────────
 function handleQuoteSubmit(e) {
   e.preventDefault();
-  document.getElementById('quoteForm').classList.add('hidden');
+  const form = document.getElementById('quoteForm');
+  const d = new FormData(form);
+
+  const fullName   = d.get('fullName')    || '';
+  const phone      = d.get('phone')       || '';
+  const email      = d.get('email')       || '';
+  const address    = d.get('address')     || '';
+  const projectType= d.get('projectType') || '';
+  const budget     = d.get('budget')      || '';
+  const startDate  = d.get('startDate')   || '';
+  const description= d.get('description') || '';
+  const methods    = d.getAll('contactMethod').join(', ') || 'Not specified';
+
+  const subject = encodeURIComponent('Quote Request — ' + projectType + ' — ' + fullName);
+  const body = encodeURIComponent(
+    'NEW QUOTE REQUEST — MTARISE CONSTRUCTION LTD\n' +
+    '==================================================\n\n' +
+    'CONTACT DETAILS\n' +
+    'Name:         ' + fullName + '\n' +
+    'Phone:        ' + phone + '\n' +
+    'Email:        ' + email + '\n' +
+    'Property:     ' + address + '\n\n' +
+    'PROJECT DETAILS\n' +
+    'Type:         ' + projectType + '\n' +
+    'Budget:       ' + budget + '\n' +
+    'Start Date:   ' + startDate + '\n\n' +
+    'DESCRIPTION\n' + description + '\n\n' +
+    'PREFERENCES\n' +
+    'Contact via:  ' + methods + '\n\n' +
+    '==================================================\n' +
+    'Submitted via mtarise.com'
+  );
+
+  window.location.href = 'mailto:info@mtarise.com?subject=' + subject + '&body=' + body;
+
+  form.classList.add('hidden');
   document.getElementById('quoteSuccess').classList.remove('hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  showToast('✅ Quote request submitted! We\'ll be in touch within 24 hours.');
+  showToast('✅ Opening email client — your request will be sent to info@mtarise.com');
 }
 function handleQuickContact(e) { e.preventDefault(); e.target.reset(); showToast('✅ Message sent!'); }
 function handleContact(e) { e.preventDefault(); e.target.reset(); showToast('✅ Message sent! We\'ll respond within 24 hours.'); }
