@@ -445,7 +445,7 @@ main { padding-top: var(--nav-h); min-height: 80vh; }
 .ba-slider {
   position: relative; height: 420px; overflow: hidden;
   border-radius: var(--radius-lg); cursor: ew-resize;
-  user-select: none; border: 2px solid var(--border);
+  user-select: none; touch-action: none; border: 2px solid var(--border);
 }
 .ba-full-item .ba-slider { height: 500px; }
 .ba-before, .ba-after {
@@ -1232,8 +1232,8 @@ body {
 .nav-container { max-width: 1320px; }
 .nav-logo { color: var(--dark); }
 .logo-mark {
-  width: 82px;
-  height: 82px;
+  width: 98px;
+  height: 76px;
   background: url('images/mtarise-logo.png') center / contain no-repeat;
   border-radius: 0;
   box-shadow: none;
@@ -1356,7 +1356,13 @@ body {
 .project-tag { color: var(--gold-dark); }
 .ba-after { border-right-color: var(--gold); }
 .ba-handle-line { background: var(--gold); }
-.ba-handle { background: var(--gold); color: var(--white); }
+.ba-handle { background: transparent; color: var(--white); }
+.ba-handle-circle {
+  background: var(--gold);
+  color: var(--white);
+  border: 3px solid rgba(255,255,255,0.92);
+  box-shadow: 0 6px 20px rgba(20,40,59,0.28), 0 0 0 4px rgba(216,117,50,0.18);
+}
 .slider-dot.active { background: var(--gold); }
 
 .cta-banner {
@@ -1417,14 +1423,16 @@ button:focus-visible, a:focus-visible {
 }
 .chat-quote-link:hover { background: var(--gold-dark); }
 
+.success-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
 @media (max-width: 900px) {
   :root { --nav-h: 78px; }
-  .logo-mark { width: 70px; height: 70px; }
+  .logo-mark { width: 86px; height: 68px; }
 }
 @media (max-width: 600px) {
   :root { --nav-h: 74px; }
   .nav-container { padding: 0 16px; }
-  .logo-mark { width: 64px; height: 64px; }
+  .logo-mark { width: 78px; height: 62px; }
   .hero { min-height: 780px; padding-top: calc(var(--nav-h) + 24px); }
   .hero-title { font-size: clamp(2.2rem, 12vw, 3.3rem); }
   .section-header { margin-bottom: 42px; }

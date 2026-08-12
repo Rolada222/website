@@ -21,7 +21,6 @@ const STATE = {
 
 const PHONE     = '087 453 3339';
 const PHONE_TEL = 'tel:0874533339';
-const QUOTE_EMAIL = 'anto@mtarise.com';
 const EMAIL     = QUOTE_EMAIL;
 
 const $  = id => document.getElementById(id);

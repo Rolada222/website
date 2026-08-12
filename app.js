@@ -73,12 +73,22 @@ function makeSlider(sliderId, handleId) {
   function pct(clientX) {
     return ((clientX - slider.getBoundingClientRect().left) / slider.offsetWidth) * 100;
   }
-  slider.addEventListener('mousedown',  e => { dragging = true; setPos(pct(e.clientX)); });
-  slider.addEventListener('touchstart', e => { dragging = true; setPos(pct(e.touches[0].clientX)); }, { passive: true });
-  window.addEventListener('mousemove',  e => { if (dragging) setPos(pct(e.clientX)); });
-  window.addEventListener('touchmove',  e => { if (dragging) setPos(pct(e.touches[0].clientX)); }, { passive: true });
-  window.addEventListener('mouseup',  () => { dragging = false; });
-  window.addEventListener('touchend', () => { dragging = false; });
+  slider.addEventListener('pointerdown', e => {
+    dragging = true;
+    slider.setPointerCapture?.(e.pointerId);
+    setPos(pct(e.clientX));
+  });
+  slider.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    e.preventDefault();
+    setPos(pct(e.clientX));
+  });
+  const stopDragging = e => {
+    dragging = false;
+    if (e?.pointerId != null) slider.releasePointerCapture?.(e.pointerId);
+  };
+  slider.addEventListener('pointerup', stopDragging);
+  slider.addEventListener('pointercancel', stopDragging);
   setPos(50);
 }
 ['heroSlider','slider1','slider2','slider3','slider4'].forEach((id, i) => {
@@ -172,7 +182,10 @@ function handleQuoteSubmit(e) {
     'Submitted via mtarise.com'
   );
 
-  window.location.href = 'mailto:' + QUOTE_EMAIL + '?subject=' + subject + '&body=' + body;
+  const mailto = 'mailto:' + QUOTE_EMAIL + '?subject=' + subject + '&body=' + body;
+  const emailLink = document.getElementById('quoteEmailLink');
+  if (emailLink) emailLink.href = mailto;
+  window.location.assign(mailto);
 
   form.classList.add('hidden');
   document.getElementById('quoteSuccess').classList.remove('hidden');
