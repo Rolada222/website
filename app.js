@@ -26,14 +26,24 @@ window.addEventListener('scroll', () => {
 
 // ─── Mobile Menu ──────────────────────────────────────
 function closeMenu() {
-  document.getElementById('hamburger').classList.remove('open');
-  document.getElementById('navLinks').classList.remove('open');
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-label', 'Open menu');
+  hamburger.setAttribute('aria-expanded', 'false');
+  navLinks.classList.remove('open');
+  document.body.classList.remove('menu-open');
   const b = document.getElementById('navBackdrop');
   if (b) b.classList.remove('visible');
 }
 function openMenu() {
-  document.getElementById('hamburger').classList.add('open');
-  document.getElementById('navLinks').classList.add('open');
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.classList.add('open');
+  hamburger.setAttribute('aria-label', 'Close menu');
+  hamburger.setAttribute('aria-expanded', 'true');
+  navLinks.classList.add('open');
+  document.body.classList.add('menu-open');
   const b = document.getElementById('navBackdrop');
   if (b) b.classList.add('visible');
 }
@@ -44,6 +54,9 @@ document.getElementById('navBackdrop').addEventListener('click', closeMenu);
 document.getElementById('navBackdrop').addEventListener('touchend', e => {
   e.preventDefault(); closeMenu();
 }, { passive: false });
+document.querySelectorAll('#navLinks a').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
 
 // ─── Scroll Reveal ────────────────────────────────────
 const revealObserver = new IntersectionObserver((entries) => {

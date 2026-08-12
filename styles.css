@@ -95,18 +95,18 @@ p { line-height: 1.8; }
    =================================================== */
 #navBackdrop {
   display: none;
-  position: fixed; inset: 0; z-index: 998;
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(2px);
+  position: fixed; inset: 0; z-index: 1100;
+  background: rgba(20,40,59,0.18);
+  pointer-events: none;
   opacity: 0; transition: opacity 0.3s;
 }
-#navBackdrop.visible { display: block; opacity: 1; }
+#navBackdrop.visible { display: block; opacity: 1; pointer-events: auto; }
 
 /* ===================================================
    NAVIGATION
    =================================================== */
 #navbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1200;
   height: var(--nav-h);
   background: rgba(17,17,17,0.97);
   backdrop-filter: blur(12px);
@@ -154,12 +154,12 @@ p { line-height: 1.8; }
   top: var(--nav-h); left: 0; right: 0; bottom: 0;
   height: calc(100dvh - var(--nav-h));
   flex-direction: column;
-  background: rgba(17,17,17,0.99);
+  background: #fff;
   padding: 16px 12px;
   gap: 4px;
   overflow-y: auto;
   overflow-x: hidden;
-  z-index: 999;
+  z-index: 1150;
   -webkit-overflow-scrolling: touch;
 }
 .nav-mobile.open { display: flex; }
@@ -1220,7 +1220,11 @@ main { padding-top: var(--nav-h); min-height: 80vh; }
 body {
   background: var(--white);
 }
-body.homepage > * { position: relative; z-index: 1; }
+body.menu-open { overflow: hidden; }
+body.homepage > *:not(#navbar):not(#navBackdrop):not(#navLinks):not(#chatbot) {
+  position: relative;
+  z-index: 1;
+}
 body.homepage::before {
   content: '';
   position: fixed;
@@ -1246,7 +1250,9 @@ body.homepage::after {
   opacity: 0.05;
   pointer-events: none;
 }
-#navbar, #navBackdrop, #chatbot { z-index: 1000; }
+#navbar { z-index: 1200; }
+#navBackdrop { z-index: 1100; backdrop-filter: none; }
+#navLinks { z-index: 1150; }
 #chatbot { z-index: 9998; }
 
 #navbar {
@@ -1292,7 +1298,7 @@ body.homepage::after {
 }
 .hamburger span { background: var(--dark); }
 .nav-mobile {
-  background: rgba(255,255,255,0.98);
+  background: #fff;
   box-shadow: 0 18px 35px rgba(20,40,59,0.10);
 }
 .nav-mobile a,
