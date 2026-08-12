@@ -1220,6 +1220,21 @@ main { padding-top: var(--nav-h); min-height: 80vh; }
 body {
   background: var(--white);
 }
+body > * { position: relative; z-index: 1; }
+body::before {
+  content: '';
+  position: fixed;
+  z-index: 2;
+  top: 14%;
+  right: -120px;
+  width: min(52vw, 700px);
+  aspect-ratio: 1;
+  background: url('images/construction-line.png') center / contain no-repeat;
+  opacity: 0.065;
+  pointer-events: none;
+}
+#navbar, #navBackdrop, #chatbot { z-index: 1000; }
+#chatbot { z-index: 9998; }
 
 #navbar {
   height: var(--nav-h);
@@ -1439,4 +1454,5 @@ button:focus-visible, a:focus-visible {
   .hero-title { font-size: clamp(2.2rem, 12vw, 3.3rem); }
   .section-header { margin-bottom: 42px; }
   .footer-logo .logo-mark { width: 146px; height: 96px; }
+  body::before { top: 24%; right: -180px; width: 92vw; opacity: 0.045; }
 }
