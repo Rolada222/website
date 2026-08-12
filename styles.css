@@ -1220,17 +1220,30 @@ main { padding-top: var(--nav-h); min-height: 80vh; }
 body {
   background: var(--white);
 }
-body > * { position: relative; z-index: 1; }
-body::before {
+body.homepage > * { position: relative; z-index: 1; }
+body.homepage::before {
   content: '';
   position: fixed;
-  z-index: 2;
+  z-index: 0;
   top: 14%;
-  right: -120px;
-  width: min(52vw, 700px);
+  left: -150px;
+  right: auto;
+  width: min(38vw, 500px);
   aspect-ratio: 1;
   background: url('images/construction-line.png') center / contain no-repeat;
-  opacity: 0.065;
+  opacity: 0.055;
+  pointer-events: none;
+}
+body.homepage::after {
+  content: '';
+  position: fixed;
+  z-index: 0;
+  top: 17%;
+  right: -150px;
+  width: min(42vw, 560px);
+  aspect-ratio: 1;
+  background: url('images/construction-blueprint.png') center / contain no-repeat;
+  opacity: 0.05;
   pointer-events: none;
 }
 #navbar, #navBackdrop, #chatbot { z-index: 1000; }
@@ -1454,5 +1467,6 @@ button:focus-visible, a:focus-visible {
   .hero-title { font-size: clamp(2.2rem, 12vw, 3.3rem); }
   .section-header { margin-bottom: 42px; }
   .footer-logo .logo-mark { width: 146px; height: 96px; }
-  body::before { top: 24%; right: -180px; width: 92vw; opacity: 0.045; }
+  body.homepage::before { top: 25%; left: -170px; width: 66vw; opacity: 0.035; }
+  body.homepage::after { top: 27%; right: -170px; width: 72vw; opacity: 0.03; }
 }
