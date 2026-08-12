@@ -58,6 +58,21 @@ document.querySelectorAll('#navLinks a').forEach(link => {
   link.addEventListener('click', closeMenu);
 });
 
+// ─── Legal links ──────────────────────────────────────
+// Keep the footer links working on every static page, including older pages
+// whose footer was created before the legal pages were added.
+(function ensureLegalLinks() {
+  document.querySelectorAll('.footer-bottom .container p').forEach(footerText => {
+    const links = [...footerText.querySelectorAll('a')];
+    const privacy = links.find(link => /privacy/i.test(link.textContent));
+    const terms = links.find(link => /terms|conditions/i.test(link.textContent));
+    if (privacy) privacy.href = 'privacy.html';
+    else footerText.insertAdjacentHTML('beforeend', ' | <a href="privacy.html">Privacy Policy</a>');
+    if (terms) terms.href = 'terms.html';
+    else footerText.insertAdjacentHTML('beforeend', ' | <a href="terms.html">Terms of Service</a>');
+  });
+})();
+
 // ─── Scroll Reveal ────────────────────────────────────
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
