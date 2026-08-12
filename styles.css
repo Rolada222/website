@@ -5,27 +5,27 @@
 
 /* --- CSS Custom Properties --- */
 :root {
-  --gold:        #C9A84C;
-  --gold-light:  #E2C97E;
-  --gold-dark:   #A07830;
-  --dark:        #111111;
-  --dark-2:      #1E1E1E;
-  --dark-3:      #2D2D2D;
-  --charcoal:    #3A3A3A;
+  --gold:        #D87532;
+  --gold-light:  #F0A66A;
+  --gold-dark:   #A94D1E;
+  --dark:        #14283B;
+  --dark-2:      #1E3B54;
+  --dark-3:      #2C526E;
+  --charcoal:    #496174;
   --white:       #FFFFFF;
-  --warm:        #F8F5EF;
-  --warm-2:      #F0EBE0;
-  --text:        #1E1E1E;
-  --text-mid:    #555555;
-  --text-light:  #888888;
-  --border:      #E5E0D8;
-  --radius:      8px;
-  --radius-lg:   16px;
-  --radius-xl:   24px;
-  --shadow:      0 4px 24px rgba(0,0,0,0.08);
-  --shadow-lg:   0 12px 48px rgba(0,0,0,0.12);
-  --shadow-gold: 0 8px 32px rgba(201,168,76,0.25);
-  --nav-h:       72px;
+  --warm:        #F4F7F9;
+  --warm-2:      #E8EFF4;
+  --text:        #182533;
+  --text-mid:    #5D6C79;
+  --text-light:  #8493A0;
+  --border:      #D9E3EA;
+  --radius:      10px;
+  --radius-lg:   18px;
+  --radius-xl:   28px;
+  --shadow:      0 8px 28px rgba(20,40,59,0.08);
+  --shadow-lg:   0 18px 60px rgba(20,40,59,0.14);
+  --shadow-gold: 0 10px 30px rgba(216,117,50,0.26);
+  --nav-h:       88px;
   --transition:  0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1211,4 +1211,222 @@ main { padding-top: var(--nav-h); min-height: 80vh; }
 @media (max-width: 420px) {
   #chatbot { bottom: 16px; right: 16px; }
   .chat-window { width: calc(100vw - 32px); right: 0; }
+}
+
+/* ===================================================
+   PREMIUM LIGHT REFRESH
+   =================================================== */
+body {
+  background: var(--white);
+}
+
+#navbar {
+  height: var(--nav-h);
+  background: rgba(255,255,255,0.94);
+  border-bottom: 1px solid rgba(20,40,59,0.10);
+  box-shadow: 0 2px 18px rgba(20,40,59,0.05);
+}
+#navbar.scrolled {
+  box-shadow: 0 10px 32px rgba(20,40,59,0.12);
+}
+.nav-container { max-width: 1320px; }
+.nav-logo { color: var(--dark); }
+.logo-mark {
+  width: 82px;
+  height: 82px;
+  background: url('images/mtarise-logo.png') center / contain no-repeat;
+  border-radius: 0;
+  box-shadow: none;
+  color: transparent;
+  font-size: 0;
+}
+.logo-text { display: none; }
+#navbar .logo-mark { background: none; }
+#navbar .logo-mark > img { width: 100%; height: 100%; object-fit: contain; }
+.nav-links a {
+  color: var(--dark);
+  font-weight: 600;
+}
+.nav-links a:hover {
+  color: var(--gold-dark);
+  background: rgba(216,117,50,0.08);
+}
+.nav-links a.active-link { color: var(--gold-dark); }
+.nav-links .nav-cta {
+  background: var(--gold);
+  color: var(--white) !important;
+  box-shadow: 0 6px 18px rgba(216,117,50,0.20);
+}
+.nav-links .nav-cta:hover {
+  background: var(--gold-dark);
+  color: var(--white) !important;
+}
+.hamburger span { background: var(--dark); }
+.nav-mobile {
+  background: rgba(255,255,255,0.98);
+  box-shadow: 0 18px 35px rgba(20,40,59,0.10);
+}
+.nav-mobile a,
+.nav-mobile a:hover,
+.nav-mobile a:active { color: var(--dark); }
+.nav-mobile a:hover,
+.nav-mobile a:active { background: rgba(216,117,50,0.08); }
+.nav-mobile .nav-cta,
+.nav-mobile .nav-cta:hover { color: var(--white) !important; background: var(--gold); }
+
+.page-hero,
+.page-hero.bg-dark {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(216,117,50,0.24), transparent 32%),
+    linear-gradient(125deg, #14283B 0%, #244B67 62%, #39718A 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+.section.bg-dark,
+.cta-banner.bg-dark {
+  background:
+    radial-gradient(circle at 82% 12%, rgba(216,117,50,0.18), transparent 28%),
+    linear-gradient(135deg, #14283B 0%, #1E3B54 100%);
+}
+.section-title { letter-spacing: -0.02em; }
+.section-eyebrow { color: var(--gold-dark); }
+.section-eyebrow.light { color: var(--gold-light); }
+.section-title em { color: var(--gold-dark); }
+.section-title.light em { color: var(--gold-light); }
+
+.hero {
+  min-height: calc(100vh - var(--nav-h));
+  padding-top: calc(var(--nav-h) + 36px);
+}
+.hero-bg {
+  background:
+    radial-gradient(circle at 14% 18%, rgba(216,117,50,0.13), transparent 34%),
+    radial-gradient(circle at 86% 72%, rgba(50,114,140,0.18), transparent 36%),
+    linear-gradient(135deg, #F8FBFD 0%, #EAF2F6 56%, #DCE9EF 100%);
+}
+.hero-bg::before {
+  background-image:
+    linear-gradient(120deg, transparent 0 48%, rgba(20,40,59,0.035) 49% 50%, transparent 51%),
+    linear-gradient(30deg, transparent 0 48%, rgba(20,40,59,0.025) 49% 50%, transparent 51%);
+  background-size: 90px 90px;
+  opacity: 0.7;
+}
+.hero-bg::after { border-color: rgba(216,117,50,0.18); }
+.hero-overlay { background: linear-gradient(90deg, rgba(248,251,253,0.16), rgba(248,251,253,0.02)); }
+.hero-title { color: var(--dark); }
+.hero-subtitle { color: var(--text-mid); }
+.hero .btn-outline {
+  color: var(--dark);
+  border-color: rgba(20,40,59,0.28);
+}
+.hero .btn-outline:hover {
+  background: rgba(20,40,59,0.08);
+  border-color: var(--dark);
+}
+.hero-trust { margin-top: 40px; }
+.trust-pill {
+  color: var(--dark);
+  background: rgba(255,255,255,0.72);
+  border-color: rgba(20,40,59,0.13);
+  box-shadow: 0 5px 18px rgba(20,40,59,0.06);
+}
+.trust-pill:hover { background: var(--white); border-color: rgba(216,117,50,0.48); }
+.trust-pill svg { color: var(--gold-dark); filter: none; }
+.hero-scroll-hint { color: rgba(20,40,59,0.48); }
+.scroll-line { background: linear-gradient(to bottom, transparent, rgba(216,117,50,0.72)); }
+
+.stat-card,
+.service-card,
+.testimonial-card,
+.testi-full-card,
+.sidebar-card,
+.contact-form,
+.quote-form {
+  box-shadow: var(--shadow);
+}
+.service-card:hover {
+  background: var(--dark);
+  box-shadow: var(--shadow-lg);
+}
+.service-card:hover .service-icon {
+  background: rgba(216,117,50,0.16);
+  border-color: var(--gold-light);
+}
+.project-card { box-shadow: var(--shadow); }
+.project-card:hover { box-shadow: var(--shadow-lg); }
+.project-tag { color: var(--gold-dark); }
+.ba-after { border-right-color: var(--gold); }
+.ba-handle-line { background: var(--gold); }
+.ba-handle { background: var(--gold); color: var(--white); }
+.slider-dot.active { background: var(--gold); }
+
+.cta-banner {
+  background:
+    radial-gradient(circle at 78% 20%, rgba(216,117,50,0.20), transparent 32%),
+    linear-gradient(135deg, #14283B 0%, #2D5D78 100%);
+}
+.btn-gold { background: var(--gold); border-color: var(--gold); color: var(--white); }
+.btn-gold:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: var(--white); }
+.btn-dark { background: var(--dark); border-color: var(--dark); }
+.btn-dark:hover { background: var(--dark-2); }
+
+.site-footer {
+  background:
+    radial-gradient(circle at 90% 0%, rgba(216,117,50,0.16), transparent 25%),
+    #102235;
+}
+.footer-logo {
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.14);
+}
+.footer-logo .logo-mark { width: 174px; height: 112px; }
+.footer-brand p,
+.footer-contact-item,
+.footer-contact-item a,
+.footer-links-col a { color: rgba(255,255,255,0.70); }
+.footer-links-col h4,
+.footer-contact-col h4 { color: var(--gold-light); }
+.footer-links-col a:hover,
+.footer-contact-item a:hover { color: var(--white); }
+.footer-trust-badges span { color: rgba(255,255,255,0.70); background: rgba(255,255,255,0.08); }
+.footer-bottom { border-top-color: rgba(255,255,255,0.14); }
+
+input:focus, select:focus, textarea:focus,
+button:focus-visible, a:focus-visible {
+  outline: 3px solid rgba(216,117,50,0.35);
+  outline-offset: 3px;
+}
+
+#chatToggle { background: var(--gold); color: var(--white); box-shadow: 0 12px 30px rgba(216,117,50,0.30); }
+#chatToggle:hover { background: var(--gold-dark); }
+.chat-header { background: var(--dark); }
+.chat-header-avatar {
+  background: var(--white) url('images/mtarise-logo.png') center / contain no-repeat;
+  color: transparent;
+}
+.chat-quote-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--gold);
+  color: var(--white) !important;
+  font-weight: 700;
+}
+.chat-quote-link:hover { background: var(--gold-dark); }
+
+@media (max-width: 900px) {
+  :root { --nav-h: 78px; }
+  .logo-mark { width: 70px; height: 70px; }
+}
+@media (max-width: 600px) {
+  :root { --nav-h: 74px; }
+  .nav-container { padding: 0 16px; }
+  .logo-mark { width: 64px; height: 64px; }
+  .hero { min-height: 780px; padding-top: calc(var(--nav-h) + 24px); }
+  .hero-title { font-size: clamp(2.2rem, 12vw, 3.3rem); }
+  .section-header { margin-bottom: 42px; }
+  .footer-logo .logo-mark { width: 146px; height: 96px; }
 }

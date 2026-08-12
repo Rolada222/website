@@ -21,10 +21,11 @@ const STATE = {
 
 const PHONE     = '087 453 3339';
 const PHONE_TEL = 'tel:0874533339';
-const EMAIL     = 'info@mtarise.com';
+const QUOTE_EMAIL = 'anto@mtarise.com';
+const EMAIL     = QUOTE_EMAIL;
 
 const $  = id => document.getElementById(id);
-const hi = () => STATE.userName ? `, ${STATE.userName}` : '';
+const hi = () => STATE.userName ? `, ${escapeHtml(STATE.userName)}` : '';
 
 function getGreeting() {
   const h = new Date().getHours();
@@ -445,7 +446,7 @@ const QR = {
 };
 
 // ─── Scoring engine ───────────────────────────────────
-function scoreEntry(entry, text) {
+function legacyScoreEntry(entry, text) {
   let score = 0;
   for (const group of entry.patterns) {
     if (group.some(kw => text.includes(kw))) score++;
@@ -453,7 +454,7 @@ function scoreEntry(entry, text) {
   return score;
 }
 
-function findBestMatch(text) {
+function legacyFindBestMatch(text) {
   let best = null, bestScore = 0;
   for (const entry of KB) {
     const s = scoreEntry(entry, text);
@@ -468,7 +469,7 @@ function respond(id) {
 }
 
 // ─── Lead capture ─────────────────────────────────────
-function promptLead() {
+function legacyPromptLead() {
   if (STATE.leadStage >= 4) {
     postBot(`We already have your details${hi()} — our team will be in touch very soon! 😊 Is there anything else I can help with?`, ['Our services', 'Contact details']);
     return;
@@ -477,7 +478,7 @@ function promptLead() {
   STATE.awaitLead = 'name';
 }
 
-function handleLead(text) {
+function legacyHandleLead(text) {
   if (STATE.awaitLead === 'name') {
     STATE.userName = text.split(' ')[0].replace(/[^a-zA-Z]/g, '');
     STATE.userName = STATE.userName.charAt(0).toUpperCase() + STATE.userName.slice(1);
@@ -503,7 +504,17 @@ function handleLead(text) {
   if (STATE.awaitLead === 'project') {
     STATE.leadStage = 4;
     STATE.awaitLead = null;
-    postBot(`Brilliant, ${STATE.userName}! 🎉 We have everything we need.<br><br>Our team will be in touch within <strong>24 hours</strong> to arrange your free site visit and quotation.<br><br>In the meantime, feel free to browse our <a href="projects.html">completed projects</a> or <a href="beforeafter.html">before &amp; after gallery</a> for inspiration!`, ['View our projects', 'Before & after', 'Our services']);
+    const subject = encodeURIComponent('Chatbot quote request — ' + STATE.userName + ' — ' + text);
+    const body = encodeURIComponent(
+      'NEW QUOTE REQUEST — MTARISE CONSTRUCTION LTD\n\n' +
+      'Name: ' + STATE.userName + '\n' +
+      'Email: ' + STATE.userEmail + '\n' +
+      'Phone: ' + STATE.userPhone + '\n' +
+      'Project: ' + text + '\n\n' +
+      'Submitted through the website chatbot.'
+    );
+    const mailto = 'mailto:' + QUOTE_EMAIL + '?subject=' + subject + '&body=' + body;
+    postBot(`Brilliant, ${STATE.userName}! 🎉 We have everything we need.<br><br><a class="chat-quote-link" href="${mailto}">Send these quote details to ${QUOTE_EMAIL}</a><br><br>Our team will then contact you to arrange your free site visit and quotation.`, ['View our projects', 'Before & after', 'Our services']);
     return true;
   }
   return false;
@@ -528,7 +539,8 @@ function scrollBottom() {
 function addMessage(html, role) {
   const d = document.createElement('div');
   d.className = 'chat-msg ' + role;
-  d.innerHTML = `<div class="chat-bubble">${html}</div>`;
+  const rendered = role === 'user' ? escapeHtml(html) : html;
+  d.innerHTML = `<div class="chat-bubble">${rendered}</div>`;
   $('chatMessages').appendChild(d);
   STATE.history.push({ role, html });
   scrollBottom();
@@ -594,7 +606,7 @@ function handleQuickReply(label) {
   processText(label.toLowerCase());
 }
 
-function processText(raw) {
+function legacyProcessText(raw) {
   const text = raw.toLowerCase()
     .replace(/['']/g, "'")
     .replace(/[""]/g, '"')
@@ -617,7 +629,7 @@ function processText(raw) {
 }
 
 // ─── Greeting ─────────────────────────────────────────
-function greet() {
+function legacyGreet() {
   addMessage(
     `${getGreeting()}! 👋 Welcome to <strong>MTARISE CONSTRUCTION LTD</strong>.<br>I'm here to answer your questions about our residential construction and renovation services — and help you get started with a <strong>free quote</strong>.<br><br>What can I help you with today?`,
     'bot'
@@ -629,3 +641,186 @@ function greet() {
 setTimeout(() => {
   if (!STATE.open) $('chatUnread') && $('chatUnread').classList.remove('hidden');
 }, 3000);
+
+/* ===================================================
+   ENHANCED CHAT LOGIC
+   Static-site friendly: quote details are packaged into a mailto link.
+   =================================================== */
+function escapeHtml(value) {
+  return String(value == null ? '' : value).replace(/[&<>"']/g, character => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+  }[character]));
+}
+
+function normalizeText(raw) {
+  let text = String(raw == null ? '' : raw).trim().toLowerCase();
+  if (text.normalize) text = text.normalize('NFKD').replace(/[\u0300-\u036f]/g, '');
+  const corrections = [
+    ['quoute', 'quote'], ['quotion', 'quotation'], ['rennovation', 'renovation'],
+    ['renovater', 'renovation'], ['extention', 'extension'], ['kithcen', 'kitchen'],
+    ['bath room', 'bathroom'], ['attic convertion', 'attic conversion'],
+    ['plumming', 'plumbing'], ['eletrical', 'electrical'], ['drogheda co louth', 'drogheda']
+  ];
+  corrections.forEach(([from, to]) => { text = text.split(from).join(to); });
+  return text.replace(/&/g, ' and ').replace(/[^a-z0-9@+.'\s-]/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function scoreEntry(entry, text) {
+  const haystack = normalizeText(text);
+  let score = 0;
+  for (const group of entry.patterns) {
+    const matched = group.some(keyword => {
+      const needle = normalizeText(keyword);
+      if (!needle) return false;
+      return needle.includes(' ')
+        ? haystack.includes(needle)
+        : (' ' + haystack + ' ').includes(' ' + needle + ' ');
+    });
+    if (matched) score += 1;
+  }
+  return score;
+}
+
+function findBestMatch(text) {
+  let best = null;
+  let bestScore = 0;
+  for (const entry of KB) {
+    const score = scoreEntry(entry, text);
+    if (score > bestScore) { bestScore = score; best = entry; }
+  }
+  return bestScore ? best : null;
+}
+
+const LEAD_FIELDS = ['name', 'email', 'phone', 'project', 'location', 'budget', 'details'];
+const LEAD_LABELS = {
+  name: 'your name',
+  email: 'the best email address for us to reach you',
+  phone: 'your phone number',
+  project: 'the type of project you need help with',
+  location: 'the property area or address',
+  budget: 'your approximate budget, or type “not sure”',
+  details: 'a short description of the work'
+};
+
+function leadQuestion(field) {
+  const number = LEAD_FIELDS.indexOf(field) + 1;
+  postBot(`<strong>Step ${number} of ${LEAD_FIELDS.length}</strong><br>What is ${LEAD_LABELS[field]}?<br><br><small>Type <strong>back</strong> to change the previous answer or <strong>cancel</strong> to stop.</small>`, ['Cancel quote']);
+}
+
+function cancelLead() {
+  STATE.awaitLead = null;
+  STATE.leadStage = 0;
+  STATE.leadData = null;
+  postBot('No problem — I cancelled that quote request. I can still answer questions or email the team directly.', ['Start a quote', 'Email us', 'Our services']);
+}
+
+function promptLead() {
+  if (STATE.awaitLead) {
+    postBot('We are already collecting your quote details. Please answer the current question, or choose <strong>Cancel quote</strong> to start again.', ['Cancel quote']);
+    return;
+  }
+  STATE.leadData = {};
+  STATE.leadStage = 0;
+  STATE.awaitLead = 'name';
+  postBot('Absolutely — I can prepare a quote request for the team. It takes about a minute and opens an email addressed to <strong>' + QUOTE_EMAIL + '</strong> when complete.<br><br><strong>Step 1 of ' + LEAD_FIELDS.length + '</strong><br>What is your name?<br><br><small>Type <strong>cancel</strong> to stop.</small>', ['Cancel quote']);
+}
+
+function finishLead() {
+  const lead = STATE.leadData || {};
+  const subject = encodeURIComponent('Quote request — ' + lead.project + ' — ' + lead.name);
+  const body = encodeURIComponent([
+    'NEW QUOTE REQUEST — MTARISE CONSTRUCTION LTD',
+    '',
+    'Name: ' + lead.name,
+    'Email: ' + lead.email,
+    'Phone: ' + lead.phone,
+    'Project: ' + lead.project,
+    'Location: ' + lead.location,
+    'Budget: ' + lead.budget,
+    'Details: ' + lead.details,
+    '',
+    'Submitted through the website chatbot.'
+  ].join('\n'));
+  const mailto = 'mailto:' + QUOTE_EMAIL + '?subject=' + subject + '&body=' + body;
+  STATE.awaitLead = null;
+  STATE.leadStage = LEAD_FIELDS.length;
+  STATE.userName = lead.name;
+  STATE.userEmail = lead.email;
+  STATE.userPhone = lead.phone;
+  postBot(`<strong>Your quote request is ready.</strong><br><br><a class="chat-quote-link" href="${mailto}">Email the request to ${QUOTE_EMAIL}</a><br><br>Your email app will open with all the details filled in. Send it to complete the request, and the team can then arrange your free site visit.`, ['Start over', 'View our projects', 'Contact details']);
+}
+
+function handleLead(raw) {
+  const field = STATE.awaitLead;
+  if (!field) return false;
+  const input = String(raw == null ? '' : raw).trim().slice(0, 800);
+  const normalized = normalizeText(input);
+  if (!input) { leadQuestion(field); return true; }
+  if (['cancel', 'cancel quote', 'stop', 'quit', 'exit'].includes(normalized)) { cancelLead(); return true; }
+
+  const currentIndex = LEAD_FIELDS.indexOf(field);
+  if (['back', 'go back', 'previous'].includes(normalized)) {
+    if (currentIndex <= 0) { postBot('We are already at the first step. You can type <strong>cancel</strong> at any time.', ['Cancel quote']); return true; }
+    const previous = LEAD_FIELDS[currentIndex - 1];
+    STATE.awaitLead = previous;
+    STATE.leadStage = currentIndex - 1;
+    leadQuestion(previous);
+    return true;
+  }
+
+  if (field === 'name' && input.length < 2) {
+    postBot('Please enter your first and last name, or at least two characters.', ['Cancel quote']);
+    return true;
+  }
+  if (field === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input)) {
+    postBot('That does not look like a complete email address. Please try again, for example <strong>name@example.com</strong>.', ['Cancel quote']);
+    return true;
+  }
+  if (field === 'phone' && input.replace(/\D/g, '').length < 7) {
+    postBot('Please enter a valid phone number so the team can arrange your visit.', ['Cancel quote']);
+    return true;
+  }
+  if ((field === 'project' || field === 'location') && input.length < 3) {
+    postBot('Please add a little more detail so the team knows what to prepare for.', ['Cancel quote']);
+    return true;
+  }
+
+  STATE.leadData[field] = ['not sure', 'unsure', 'skip', 'none'].includes(normalized) ? 'Not specified' : input;
+  STATE.leadStage = currentIndex + 1;
+  const next = LEAD_FIELDS[currentIndex + 1];
+  if (next) {
+    STATE.awaitLead = next;
+    leadQuestion(next);
+  } else {
+    finishLead();
+  }
+  return true;
+}
+
+function processText(raw) {
+  const text = normalizeText(String(raw == null ? '' : raw).slice(0, 800));
+  if (!text) return;
+  if (['help', 'menu', 'options', 'main menu', 'start'].includes(text)) {
+    postBot('I can help with:<br><br><strong>Quotes</strong> — prepare an emailed quote request<br><strong>Services</strong> — construction, renovations, MEP and maintenance<br><strong>Projects</strong> — browse completed work<br><strong>Practical questions</strong> — pricing, timelines, planning and coverage<br><strong>Contact</strong> — email or call the team.', ['Get a free quote', 'Our services', 'Pricing info', 'Contact details', 'Email us']);
+    return;
+  }
+  if (['restart', 'reset', 'start over'].includes(text)) { cancelLead(); return; }
+  const match = findBestMatch(text);
+  if (match) {
+    STATE.lastTopic = match.id;
+    STATE.seenTopics.add(match.id);
+    postBot(match.reply(), match.quick);
+    return;
+  }
+  postBot(`I can help with quotes, services, pricing, timelines, planning, or contact details${hi()}. Try asking about your project, or choose an option below.`, ['Get a free quote', 'Our services', 'Pricing info', 'Contact details', 'Email us']);
+}
+
+function greet() {
+  addMessage(`${getGreeting()}! 👋 Welcome to <strong>MTARISE CONSTRUCTION LTD</strong>.<br><br>I can answer questions about your project, explain our services, or prepare a quote request addressed to <strong>${QUOTE_EMAIL}</strong>.<br><br>What would you like to do?`, 'bot');
+  setTimeout(() => setQuickReplies(['Get a free quote', 'Our services', 'Pricing info', 'View our projects', 'Contact details', 'Email us']), 200);
+}
+
+QR['Start a quote'] = () => promptLead();
+QR['Start over'] = () => promptLead();
+QR['Cancel quote'] = () => cancelLead();
+QR['Email us'] = () => { window.location.href = 'mailto:' + QUOTE_EMAIL + '?subject=' + encodeURIComponent('Website enquiry — MTARISE CONSTRUCTION LTD'); };

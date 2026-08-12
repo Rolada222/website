@@ -4,6 +4,8 @@
    =================================================== */
 'use strict';
 
+const QUOTE_EMAIL = 'anto@mtarise.com';
+
 // ─── Auto-highlight current page in nav ──────────────
 (function () {
   const page = window.location.pathname.split('/').pop() || 'index.html';
@@ -135,6 +137,7 @@ function filterProjects(btn, cat) {
 function handleQuoteSubmit(e) {
   e.preventDefault();
   const form = document.getElementById('quoteForm');
+  if (!form.checkValidity()) { form.reportValidity(); return; }
   const d = new FormData(form);
 
   const fullName   = d.get('fullName')    || '';
@@ -146,6 +149,7 @@ function handleQuoteSubmit(e) {
   const startDate  = d.get('startDate')   || '';
   const description= d.get('description') || '';
   const methods    = d.getAll('contactMethod').join(', ') || 'Not specified';
+  const attachments = d.getAll('files').map(file => file && file.name).filter(Boolean).join(', ') || 'None';
 
   const subject = encodeURIComponent('Quote Request — ' + projectType + ' — ' + fullName);
   const body = encodeURIComponent(
@@ -163,21 +167,59 @@ function handleQuoteSubmit(e) {
     'DESCRIPTION\n' + description + '\n\n' +
     'PREFERENCES\n' +
     'Contact via:  ' + methods + '\n\n' +
+    'ATTACHMENTS SELECTED\n' + attachments + '\n\n' +
     '==================================================\n' +
     'Submitted via mtarise.com'
   );
 
-  window.location.href = 'mailto:info@mtarise.com?subject=' + subject + '&body=' + body;
+  window.location.href = 'mailto:' + QUOTE_EMAIL + '?subject=' + subject + '&body=' + body;
 
   form.classList.add('hidden');
   document.getElementById('quoteSuccess').classList.remove('hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  showToast('✅ Opening email client — your request will be sent to info@mtarise.com');
+  showToast('✅ Opening email client — your request will be sent to ' + QUOTE_EMAIL);
 }
-function handleQuickContact(e) { e.preventDefault(); e.target.reset(); showToast('✅ Message sent!'); }
-function handleContact(e) { e.preventDefault(); e.target.reset(); showToast('✅ Message sent! We\'ll respond within 24 hours.'); }
+function handleQuickContact(e) {
+  e.preventDefault();
+  const form = e.target;
+  if (!form.checkValidity()) { form.reportValidity(); return; }
+  const fields = form.querySelectorAll('input, textarea');
+  const subject = encodeURIComponent('Website enquiry — ' + fields[0].value);
+  const body = encodeURIComponent(
+    'NEW WEBSITE ENQUIRY — MTARISE CONSTRUCTION LTD\n\n' +
+    'Name: ' + fields[0].value + '\n' +
+    'Email: ' + fields[1].value + '\n' +
+    'Phone: ' + fields[2].value + '\n' +
+    'Message: ' + fields[3].value
+  );
+  window.location.href = 'mailto:' + QUOTE_EMAIL + '?subject=' + subject + '&body=' + body;
+  form.reset();
+  showToast('✅ Opening email client — your message will be sent to ' + QUOTE_EMAIL);
+}
+function handleContact(e) {
+  e.preventDefault();
+  const form = e.target;
+  if (!form.checkValidity()) { form.reportValidity(); return; }
+  const d = new FormData(form);
+  const name = d.get('name') || '';
+  const subject = encodeURIComponent((d.get('subject') || 'Website enquiry') + ' — ' + name);
+  const body = encodeURIComponent(
+    'NEW WEBSITE ENQUIRY — MTARISE CONSTRUCTION LTD\n\n' +
+    'Name: ' + name + '\n' +
+    'Email: ' + (d.get('email') || '') + '\n' +
+    'Phone: ' + (d.get('phone') || '') + '\n' +
+    'Message: ' + (d.get('message') || '')
+  );
+  window.location.href = 'mailto:' + QUOTE_EMAIL + '?subject=' + subject + '&body=' + body;
+  form.reset();
+  const fields = document.getElementById('contactFormFields');
+  const success = document.getElementById('contactSuccess');
+  if (fields) fields.classList.add('hidden');
+  if (success) success.classList.remove('hidden');
+  showToast('✅ Opening email client — your message will be sent to ' + QUOTE_EMAIL);
+}
 function showFileNames(input) {
-  const d = document.getElementById('fileNames');
+  const d = document.getElementById('fileNameList') || document.getElementById('fileNames');
   if (d) d.textContent = Array.from(input.files).map(f => f.name).join(', ');
 }
 
