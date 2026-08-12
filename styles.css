@@ -851,6 +851,7 @@ main { padding-top: var(--nav-h); min-height: 80vh; }
 .map-overlay-text { text-align: center; display: flex; flex-direction: column; gap: 8px; }
 .map-overlay-text span { font-size: 1rem; font-weight: 600; color: var(--text-mid); }
 .map-overlay-text small { color: var(--text-light); }
+.coverage-note { color: var(--text-mid); font-size: 0.92rem; line-height: 1.7; margin: -8px 0 18px; max-width: 680px; }
 
 /* ===================================================
    FAQ PAGE
@@ -1312,27 +1313,6 @@ body {
 }
 .hero-bg::after { border-color: rgba(216,117,50,0.18); }
 .hero-overlay { background: linear-gradient(90deg, rgba(248,251,253,0.16), rgba(248,251,253,0.02)); }
-.hero-construction-art {
-  position: absolute;
-  z-index: 1;
-  right: 3%;
-  bottom: 8%;
-  width: min(39vw, 520px);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: end;
-  gap: 0;
-  opacity: 0.48;
-  pointer-events: none;
-  filter: drop-shadow(0 16px 22px rgba(20,40,59,0.08));
-}
-.hero-construction-art img { width: 100%; height: auto; display: block; }
-.hero-construction-art img:first-child {
-  grid-column: 1 / -1;
-  width: 68%;
-  justify-self: center;
-  margin-bottom: -46px;
-}
 .hero-title { color: var(--dark); }
 .hero-subtitle { color: var(--text-mid); }
 .hero .btn-outline {
@@ -1450,13 +1430,11 @@ button:focus-visible, a:focus-visible {
 @media (max-width: 900px) {
   :root { --nav-h: 78px; }
   .logo-mark { width: 86px; height: 68px; }
-  .hero-construction-art { right: -4%; bottom: 7%; width: 50vw; opacity: 0.30; }
 }
 @media (max-width: 600px) {
   :root { --nav-h: 74px; }
   .nav-container { padding: 0 16px; }
   .logo-mark { width: 78px; height: 62px; }
-  .hero-construction-art { right: -19%; bottom: 8%; width: 86vw; opacity: 0.20; }
   .hero { min-height: 780px; padding-top: calc(var(--nav-h) + 24px); }
   .hero-title { font-size: clamp(2.2rem, 12vw, 3.3rem); }
   .section-header { margin-bottom: 42px; }

@@ -261,8 +261,8 @@ const KB = [
   // ── Areas ──────────────────────────────────────────
   {
     id: 'areas',
-    patterns: [['area','areas','cover','where do you work','location','local','dublin','wicklow','kildare','meath','louth','south dublin','north dublin','county','near me']],
-    reply: () => `We cover the greater Dublin region and surrounding counties${hi()} 📍<br><br><strong>Dublin:</strong> All D1–D24 postcodes<br><strong>Co. Dublin:</strong> Dún Laoghaire, Blackrock, Clontarf, Malahide, Swords, Tallaght &amp; all areas<br><strong>Co. Wicklow:</strong> Bray, Greystones, Wicklow town<br><strong>Co. Kildare:</strong> Naas, Newbridge, Maynooth<br><strong>Co. Meath:</strong> Navan, Trim, Dunshaughlin<br><strong>Co. Louth:</strong> Drogheda, Dundalk<br><br>Not sure if we cover your area? Just ask!`,
+    patterns: [['area','areas','cover','where do you work','location','local','ireland','nationwide','county','near me','all counties']],
+    reply: () => `We work across Ireland${hi()} 📍<br><br>MTARISE supports residential construction, renovations, extensions, MEP and maintenance projects nationwide. Our base is in Drogheda, Co. Louth, and we coordinate site visits with clients in towns and counties throughout Ireland.<br><br>Tell me your town or county and I’ll help you get started.`,
     quick: ['Get a free quote','Contact details','Our services'],
   },
 
@@ -270,7 +270,7 @@ const KB = [
   {
     id: 'contact',
     patterns: [['contact','phone','call','email','ring','reach','speak','talk','office','hours','open','find you','address','get in touch']],
-    reply: () => `Here's how to reach us${hi()} 📞<br><br>📞 <a href="${PHONE_TEL}"><strong>${PHONE}</strong></a><br>✉️ <a href="mailto:${EMAIL}">${EMAIL}</a><br>📍 Dublin, Ireland<br><br>🕐 <strong>Mon–Fri:</strong> 8:00am – 6:00pm<br>🕐 <strong>Saturday:</strong> 9:00am – 2:00pm<br>🕐 <strong>Sunday:</strong> Closed<br><br>We typically respond within <strong>2 hours</strong> during business hours.`,
+    reply: () => `Here's how to reach us${hi()} 📞<br><br>📞 <a href="${PHONE_TEL}"><strong>${PHONE}</strong></a><br>✉️ <a href="mailto:${EMAIL}">${EMAIL}</a><br>📍 Drogheda, Co. Louth — serving clients across Ireland<br><br>🕐 <strong>Mon–Fri:</strong> 8:00am – 6:00pm<br>🕐 <strong>Saturday:</strong> 9:00am – 2:00pm<br>🕐 <strong>Sunday:</strong> Closed<br><br>We typically respond within <strong>2 hours</strong> during business hours.`,
     quick: ['Get a free quote','Leave my details here','Call you directly','Our services'],
   },
 
@@ -326,7 +326,7 @@ const KB = [
   {
     id: 'about',
     patterns: [['about you','about the company','who are you','founder','avtandil','established','history','how long in business','experience','background','team']],
-    reply: () => `MTARISE CONSTRUCTION LTD was founded in 2026 by <strong>Avtandil Bitsadze</strong>${hi()} — a qualified tradesperson with <strong>9 years of hands-on residential construction experience</strong> across Dublin and surrounding areas.<br><br>What makes us different:<br>• Family-run with genuine personal investment in every project<br>• 9 years of combined team experience<br>• RECI &amp; RGII certified tradespeople<br>• €6.5m public liability insurance<br>• 12-month workmanship guarantee<br><br>We build your tomorrow, today. 🏗️`,
+    reply: () => `MTARISE CONSTRUCTION LTD was established in 2011 by <strong>Avtandil Bitsadze</strong>${hi()} — a qualified tradesperson with extensive hands-on residential construction experience across Ireland.<br><br>What makes us different:<br>• Family-run with genuine personal investment in every project<br>• 15+ years of experience<br>• RECI &amp; RGII certified tradespeople<br>• €6.5m public liability insurance<br>• 12-month workmanship guarantee<br><br>We build your tomorrow, today. 🏗️`,
     quick: ['Our services','Get a free quote','Contact details','Our guarantee'],
   },
 
