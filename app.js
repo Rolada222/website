@@ -5,6 +5,8 @@
 'use strict';
 
 const QUOTE_EMAIL = 'anto@mtarise.com';
+let quoteShareFiles = [];
+let quoteShareText = '';
 
 // ─── Auto-highlight current page in nav ──────────────
 (function () {
@@ -159,7 +161,8 @@ function handleQuoteSubmit(e) {
   const startDate  = d.get('startDate')   || '';
   const description= d.get('description') || '';
   const methods    = d.getAll('contactMethod').join(', ') || 'Not specified';
-  const attachments = d.getAll('files').map(file => file && file.name).filter(Boolean).join(', ') || 'None';
+  quoteShareFiles = d.getAll('files').filter(file => file && file.size > 0);
+  const attachments = quoteShareFiles.map(file => file.name).join(', ') || 'None';
 
   const subject = encodeURIComponent('Quote Request — ' + projectType + ' — ' + fullName);
   const body = encodeURIComponent(
@@ -182,16 +185,76 @@ function handleQuoteSubmit(e) {
     'Submitted via mtarise.com'
   );
 
+  quoteShareText = [
+    'NEW QUOTE REQUEST — MTARISE CONSTRUCTION LTD',
+    '',
+    'Name: ' + fullName,
+    'Phone: ' + phone,
+    'Email: ' + email,
+    'Property: ' + address,
+    'Project: ' + projectType,
+    'Budget: ' + budget,
+    'Start Date: ' + startDate,
+    'Contact via: ' + methods,
+    '',
+    'DESCRIPTION',
+    description,
+    '',
+    'Selected attachments: ' + attachments,
+    '',
+    'Submitted via mtarise.com'
+  ].join('\n');
+
   const mailto = 'mailto:' + QUOTE_EMAIL + '?subject=' + subject + '&body=' + body;
   const emailLink = document.getElementById('quoteEmailLink');
   if (emailLink) emailLink.href = mailto;
-  window.location.assign(mailto);
+  const shareButton = document.getElementById('shareQuoteButton');
+  if (shareButton) shareButton.classList.toggle('hidden', quoteShareFiles.length === 0);
+  let nativeShareAvailable = false;
+  try {
+    nativeShareAvailable = quoteShareFiles.length > 0 && !!navigator.share && !!navigator.canShare && navigator.canShare({ files: quoteShareFiles });
+  } catch (error) {
+    nativeShareAvailable = false;
+  }
+  if (nativeShareAvailable) {
+    shareQuoteWithAttachments();
+  } else {
+    window.location.assign(mailto);
+  }
 
   form.classList.add('hidden');
   document.getElementById('quoteSuccess').classList.remove('hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
   showToast('✅ Opening email client — your request will be sent to ' + QUOTE_EMAIL);
 }
+async function shareQuoteWithAttachments() {
+  if (!quoteShareFiles.length) {
+    showToast('Please select at least one image or PDF first.');
+    return;
+  }
+  let canShareFiles = false;
+  try {
+    canShareFiles = !!navigator.share && !!navigator.canShare && navigator.canShare({ files: quoteShareFiles });
+  } catch (error) {
+    canShareFiles = false;
+  }
+  if (!canShareFiles) {
+    showToast('Your device cannot attach files automatically. Use Open Email App, then attach the selected files manually.');
+    return;
+  }
+  try {
+    await navigator.share({
+      title: 'MTARISE Construction quote request',
+      text: 'To: ' + QUOTE_EMAIL + '\nSubject: MTARISE Construction quote request\n\n' + quoteShareText,
+      files: quoteShareFiles
+    });
+  } catch (error) {
+    if (error && error.name !== 'AbortError') {
+      showToast('Sharing was unavailable. Use Open Email App and attach the files manually.');
+    }
+  }
+}
+
 function handleQuickContact(e) {
   e.preventDefault();
   const form = e.target;

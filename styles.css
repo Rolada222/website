@@ -1424,6 +1424,7 @@ button:focus-visible, a:focus-visible {
 .chat-quote-link:hover { background: var(--gold-dark); }
 
 .success-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.attachment-note { display: block; max-width: 620px; margin-top: 12px; color: var(--text-light); line-height: 1.6; }
 
 @media (max-width: 900px) {
   :root { --nav-h: 78px; }
